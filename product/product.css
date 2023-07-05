@@ -1,4 +1,6 @@
-@import "../css/reset.css";
+@import "../public/css/reset.css";
+@import "../public/css/variables.css";
+
 * {
   box-sizing: border-box;
   outline: 1px solid #4f80ff;
@@ -67,33 +69,62 @@ body {
   width: 24%;
   margin-bottom: 5%;
 }
+.item-row:nth-child(1) {
+  margin-bottom: 15px;
+  position: relative;
+}
 .item-row > img {
   width: 365px;
   height: 548px;
   max-width: 100%;
-  position: relative;
 }
 .item-row > i {
   position: absolute;
-  top: 50%;
-  left: 50%;
+
+  top: 2%;
+  left: 90%;
+  color: var(--gray);
 }
 
 .item-brand {
   margin: 0px 6px 12px;
   font-size: 12px;
+  color: var(--gray);
 }
 
 .item-name {
   margin: 0px 6px 18px;
   font-size: 15px;
+  font-weight: 400;
 }
 
 .item-price {
   margin: 0px 6px 18px;
   font-size: 15px;
+  font-weight: 300;
+}
+.item-review {
+  margin: 0 6px;
+  font-size: 13px;
+  color: var(--gray);
+
+  position: relative;
+}
+.item-review > i {
+  color: var(--yellow);
+}
+.item-rating {
+  margin-right: 5px;
+}
+.item-rating > strong {
+  color: var(--black);
 }
 .item-bar {
-  border: 1px solid;
-  margin: 0 3px;
+  width: 1px;
+  height: 9px;
+  color: var(--gray);
+
+  position: absolute;
+  top: 3px;
+  left: 50px;
 }
