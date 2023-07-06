@@ -3,7 +3,7 @@
 
 * {
   box-sizing: border-box;
-  outline: 1px solid #4f80ff;
+  /* outline: 1px solid #4f80ff; */
 }
 
 .my-order-container {
@@ -52,23 +52,84 @@
 
   background-color: var(--black);
 }
+/* 여기까지 공통 */
 
 .my-order-main {
   width: 80%;
-  border-bottom: solid 1px var(--black);
 }
 
-/* 여기까지 공통 */
-
+.my-order-title {
+  font-size: 35px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
 .my-order-search {
   display: flex;
   flex-flow: row;
+
+  padding: 45px 40px;
+  margin-bottom: 60px;
+
+  background-color: #f8f8f8;
+}
+.my-order-search > div {
+  width: 90%;
+  margin-right: 10px;
+  font-weight: 400;
 }
 .item-name-search {
   display: flex;
   flex-flow: row;
+
+  margin-bottom: 10px;
+  height: 45%;
+}
+.item-name-search > div {
+  width: 12%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+}
+.item-name-search > input {
+  width: 88%;
+  border: solid 1px var(--lightGray);
+  border-radius: none;
+  padding: 0 20px;
 }
 .order-period {
   display: flex;
   flex-flow: row;
+
+  height: 45%;
+}
+.period-division {
+  width: 12%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  padding-right: 20px;
+}
+.order-period > div {
+  width: 22%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+  border: solid 1px var(--lightGray);
+  color: var(--gray);
+}
+button {
+  height: 90px;
+  padding: 0 25px;
+
+  color: white;
+  background-color: var(--black);
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+.orderList {
+  color: var(--gray);
 }
