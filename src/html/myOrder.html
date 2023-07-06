@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../css/myOrder.css" />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="../js/myOrder.js"></script>
+  </head>
+  <body>
+    <!-- header -->
+    <div class="header">header</div>
+
+    <div class="my-order-container">
+      <!--공통된 component:my-category-->
+      <div class="my-category">
+        <div class="home-title">마이페이지<!--js--></div>
+
+        <div class="home-category">
+          <!-- js로 추후 구현 -->
+          <a href="/src/html/my.html">홈</a>
+          <a href="/src/html/myOrder.html">주문조회</a>
+          <a href="">취소/교환/반품</a>
+          <a href="">관심상품</a>
+          <a href="">리뷰</a>
+          <a href="">회원정보수정</a>
+          <a href="">회원 탈퇴</a>
+        </div>
+      </div>
+
+      <div class="my-order-main">
+        <div class="my-order-title">주문조회</div>
+
+        <div class="my-order-search">
+          <div>
+            <div>
+              <div>상품</div>
+              <input type="상품명을 입력해 주세요." />
+            </div>
+            <div>
+              <div>기간</div>
+              <div>3개월</div>
+              <div>6개월</div>
+              <div>9개월</div>
+              <div>1년</div>
+            </div>
+          </div>
+          <button>조회</button>
+        </div>
+
+        <div class="orderList">*최근 1년간 구매하신 내역입니다.</div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer>footer</footer>
+
+    <!-- fontawesome icon 사용권한 -->
+    <script src="https://kit.fontawesome.com/6d5788fdc0.js"></script>
+  </body>
+</html>

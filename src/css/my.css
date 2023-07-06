@@ -12,11 +12,11 @@
 
   margin: 5% 8%;
 }
-.home-column {
+.my-category {
   display: flex;
   flex-flow: column;
 }
-.home-column:nth-child(1) {
+.my-category {
   width: 20%;
   margin-right: 10px;
   margin-bottom: 80px;
@@ -46,7 +46,7 @@
   color: var(--green);
 }
 
-.home-column:nth-child(2) {
+.home-main {
   width: 80%;
   border-bottom: solid 2px var(--black);
 }
