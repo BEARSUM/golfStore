@@ -16,9 +16,9 @@ for (let i = 1; i <= 16; i++) {
                 <div class="item-price">00000원</div>
                 <div class="item-review">
                   <i class="fa-solid fa-star"></i>
-                  <span class="item-rating"><strong>5.0</strong>/5</span>
-                  <span class="item-bar"></span>
-                  <span class="item-review-number">리뷰 1</span>
+                  <span class="review-rating"><strong>5.0</strong>/5</span>
+                  <span class="review-bar"></span>
+                  <span class="review-number">리뷰 1</span>
                 </div>
                 
               </div>

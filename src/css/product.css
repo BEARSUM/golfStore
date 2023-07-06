@@ -126,16 +126,16 @@ body {
 .item-review > i {
   color: var(--yellow);
 }
-.item-rating {
+.review-rating {
   margin-right: 5px;
 }
-.item-rating > strong {
+.review-rating > strong {
   color: var(--black);
 }
-.item-bar {
+.review-bar {
   width: 1px;
   height: 9px;
-  color: var(--gray);
+  background-color: var(--gray);
 
   position: absolute;
   top: 3px;

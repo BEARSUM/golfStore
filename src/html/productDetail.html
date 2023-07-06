@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="../css/productDetail.css" />
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,17 +13,49 @@
     <div class="header">header</div>
 
     <div class="pd-detail-container">
-      <div class="detail-img"></div>
+      <div class="pd-detail">
+        <img src="../../public/asset/img/men-top-4.jpg" alt="" />
+        <img src="../../public/asset/img/men-top-5.jpg" alt="" />
+      </div>
 
-      <div class="sale-info">
-        <div class="sale-brand"></div>
-        <div class="sale-item-name"></div>
-        <div class="sale-price"></div>
-        <div class="sale-review"></div>
-        <div class="sale-option"></div>
-        <div class="sale-quantity"></div>
-        <div class="purchase-option"></div>
+      <div class="item-info">
+        <div class="item-brand">브랜드명</div>
+        <div class="item-item-name">상품명</div>
+        <div class="item-price">00000원</div>
+        <div class="item-review">
+          <i class="fa-solid fa-star"></i>
+          <span class="review-rating"><strong>5.0</strong>/5</span>
+          <span class="review-bar"></span>
+          <span class="review-number">리뷰 1 ></span>
+        </div>
+        <div class="horizontal-bar"></div>
+
+        <select id="sale-option">
+          <option value="" selected>옵션선택</option>
+
+          <option value="sizeS">S</option>
+          <option value="sizeS">M</option>
+          <option value="sizeS">L</option>
+          <option value="sizeS">XL</option>
+        </select>
+
+        <div class="item-quantity">
+          <div class="q-decrease">-</div>
+          <div class="q-number">1</div>
+          <div class="q-increase">+</div>
+        </div>
+        <div class="purchase-option">
+          <i class="fa-solid fa-star fa-xl"></i>
+          <div class="option-cart">장바구니</div>
+          <div class="option-purchase">구매하기</div>
+        </div>
       </div>
     </div>
+
+    <!-- footer -->
+    <footer>footer</footer>
+
+    <!-- fontawesome icon 사용권한 -->
+    <script src="https://kit.fontawesome.com/6d5788fdc0.js"></script>
   </body>
 </html>
