@@ -1,0 +1,74 @@
+@import "../../public/css/reset.css";
+@import "../../public/css/variables.css";
+
+* {
+  box-sizing: border-box;
+  outline: 1px solid #4f80ff;
+}
+
+.my-order-container {
+  display: flex;
+  flex-flow: row;
+
+  margin: 5% 8%;
+}
+.my-category {
+  display: flex;
+  flex-flow: column;
+}
+.my-category {
+  width: 20%;
+  margin-right: 10px;
+}
+
+.my-title {
+  margin-bottom: 44px;
+
+  font-size: 28px;
+  font-weight: 300;
+}
+.my-category-list {
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+
+  font-weight: 400;
+}
+.my-category-list > a {
+  text-decoration: none;
+  color: var(--gray);
+
+  cursor: pointer;
+}
+
+/* js */
+.my-category-list > a:nth-child(2) {
+  color: var(--green);
+}
+.horizontal-bar {
+  margin-top: 80px;
+  width: 70%;
+  height: 1px;
+
+  background-color: var(--black);
+}
+
+.my-order-main {
+  width: 80%;
+  border-bottom: solid 1px var(--black);
+}
+
+/* 여기까지 공통 */
+
+.my-order-search {
+  display: flex;
+  flex-flow: row;
+}
+.item-name-search {
+  display: flex;
+  flex-flow: row;
+}
+.order-period {
+  display: flex;
+  flex-flow: row;
+}
