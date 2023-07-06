@@ -1,0 +1,24 @@
+@import "../../public/css/reset.css";
+@import "../../public/css/variables.css";
+
+* {
+  box-sizing: border-box;
+  outline: 1px solid #4f80ff;
+}
+
+.home-container {
+  display: flex;
+  flex-flow: row;
+}
+.home-column:nth-child {
+  display: flex;
+  flex-flow: column;
+}
+.recent-order-type {
+  display: flex;
+  flex-flow: row;
+}
+.recent-order-status {
+  display: flex;
+  flex-flow: row;
+}
