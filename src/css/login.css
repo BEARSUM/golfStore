@@ -1,0 +1,28 @@
+.login-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+  }
+  
+  .login-form-box {
+    width: 30rem;
+
+  }
+  
+  .login-form-box .title {
+    text-align: center;
+  }
+  
+  
+  .login-form-box .button {
+    font-weight: bold;
+  } 
+  
+  .loginBtn button:first-child{
+    background-color: #0EA75C;
+  }
+
+  .title {
+    color: #0EA75C !important;
+  }

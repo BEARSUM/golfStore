@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>회원가입</title>
+    <!-- bulma css 관련 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <!-- 폰트 어썸: 아이콘 -->
+    <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="/pageLogo.png"
+    />
+
+    <!-- 구글 OAuth -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- 카카오 OAuth -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <!-- 커스텀 css, js -->
+    <link rel="stylesheet" href="../css/register.css" />
+    <script src="register.js" type="module" defer></script>
+  </head>
+  <body> 
+
+ <!-- 헤더 -->
+   <header>
+
+
+
+   </header>
+
+
+    <!-- 회원가입 폼(Form) -->
+    <main class="main">
+      <div class="register-user-form-container">
+        <form class="box register-user-form-box" id="registerUserForm">
+          <p class="welcomeTitle welcome title is-5 has-text-primary">환영합니다!</p>
+          <div class="field">
+            <label class="label" for="fullNameInput">이름</label>
+            <div class="control">
+              <input
+                class="input"
+                id="fullNameInput"
+                type="text"
+                placeholder="더골프"
+                autocomplete="on"
+              />
+            </div>
+          </div>
+  
+          <div class="field">
+            <label class="label" for="emailInput">이메일</label>
+            <div class="control">
+              <input
+                class="input"
+                id="emailInput"
+                type="email"
+                placeholder="abc@example.com"
+                autocomplete="on"
+              />
+            </div>
+          </div>
+  
+          <div class="field">
+            <label class="label" for="phoneInput">전화번호</label>
+            <div class="control">
+              <input
+                class="input"
+                id="phoneInput"
+                type="tel"
+                placeholder="010-0000-0000"
+                autocomplete="on"
+              />
+            </div>
+          </div>
+  
+          <div class="field">
+            <label class="label" for="addressInput">주소</label>
+            <div class="control">
+              <input
+                class="input"
+                id="addressInput"
+                type="email"
+                placeholder="경기도 수원시 팔달구 우만동 513-17"
+                autocomplete="on"
+              />
+            </div>
+          </div>
+  
+          <div class="field">
+            <label class="label" for="passwordInput">비밀번호</label>
+            <div class="control">
+              <input
+                class="input"
+                id="passwordInput"
+                type="password"
+                placeholder="********"
+                autocomplete="off"
+              />
+            </div>
+          </div>
+  
+          <div class="field mb-5">
+            <label class="label" for="passwordConfirmInput">비밀번호 확인</label>
+            <div class="control">
+              <input
+                class="input"
+                id="passwordConfirmInput"
+                type="password"
+                placeholder="********"
+                autocomplete="off"
+              />
+            </div>
+          </div>
+
+          <div class="welcomeBtn">
+            <button class="welcomeBtns button is-primary is-fullwidth" id="submitButton">
+              회원가입하기
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </main>
+
+  </body>
+</html>
