@@ -70,14 +70,15 @@
   font-size: 16px;
 }
 .main-horizontal-bar {
-  margin: 40px 0;
+  margin-bottom: 40px;
   width: 100%;
   height: 2px;
 
   background-color: var(--black);
 }
 .recent-order-title {
-  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-bottom: 10px;
 
   font-size: 16px;
   font-weight: 700;
@@ -130,6 +131,13 @@
   font-size: 14px;
 }
 .status-arrow {
+  display: flex;
+  align-items: center;
+
+  font-size: 30px;
+  color: var(--lightGray);
+}
+.status-division {
   display: flex;
   align-items: center;
 

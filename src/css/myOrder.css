@@ -70,7 +70,7 @@
   padding: 45px 40px;
   margin-bottom: 60px;
 
-  background-color: #f8f8f8;
+  background-color: var(--whiteGray);
 }
 .my-order-search > div {
   width: 90%;
@@ -121,7 +121,7 @@
   border: solid 1px var(--lightGray);
   color: var(--gray);
 }
-button {
+.search-button {
   height: 90px;
   padding: 0 25px;
 
@@ -129,7 +129,107 @@ button {
   background-color: var(--black);
   font-size: 14px;
   padding-bottom: 5px;
+  border: none;
+  cursor: pointer;
 }
-.orderList {
+.order-info-message {
   color: var(--gray);
+}
+.main-horizontal-bar {
+  margin-top: 20px;
+  width: 100%;
+  height: 1px;
+
+  background-color: var(--black);
+}
+.ordered-item-container {
+  display: flex;
+  flex-flow: column;
+  border-bottom: solid 1px var(--lightGray);
+}
+.ordered-date {
+  border-top: solid 1px var(--lightGray);
+  border-bottom: solid 1px var(--lightGray);
+  font-size: 18px;
+  font-weight: 400;
+  background-color: var(--whiteGray);
+
+  padding: 12px;
+}
+.ordered-item {
+  display: flex;
+  flex-flow: row;
+  margin: 20px 10px;
+}
+.ordered-item > img {
+  width: 12%;
+}
+.item-info {
+  width: 85%;
+  margin-left: 25px;
+}
+.item-brand {
+  margin: 5px 0 12px 0;
+  font-size: 12px;
+  font-weight: 600;
+
+  color: var(--gray);
+}
+.item-name {
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-weight: 400;
+
+  font-weight: 400;
+}
+.item-option {
+  font-size: 15px;
+  font-weight: 400;
+
+  margin-bottom: 12px;
+}
+.item-price-quantity {
+  display: flex;
+  flex-flow: row;
+  align-items: baseline;
+
+  margin-bottom: 20px;
+}
+.item-price {
+  font-size: 12px;
+  font-weight: 400;
+}
+.item-price > strong {
+  font-size: 18px;
+  font-weight: 600;
+}
+.item-quantity {
+  display: flex;
+  font-size: 12px;
+  font-weight: 400;
+}
+.item-status-cancel {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+.item-status-cancel {
+  font-size: 15px;
+  font-weight: 400;
+}
+.order-status {
+  display: flex;
+  align-items: center;
+  color: #f96122;
+}
+.order-cancel-button {
+  font-size: 15px;
+  font-weight: 400;
+  border: none;
+  height: 30px;
+  width: 10%;
+
+  color: white;
+  background-color: var(--black);
+  cursor: pointer;
 }

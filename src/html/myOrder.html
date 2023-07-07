@@ -21,10 +21,9 @@
         <div class="my-category-list">
           <!-- js로 추후 구현 -->
           <a href="/src/html/my.html">홈</a>
-          <a href="/src/html/myOrder.html">주문조회</a>
-          <a href="">취소/교환/반품</a>
-          <a href="">관심상품</a>
-          <a href="">리뷰</a>
+          <a href="/src/html/myOrder.html">주문조회/취소</a>
+          <!-- 추후구현 <a href="">관심상품</a>
+          <a href="">리뷰</a> -->
           <a href="">회원정보수정</a>
           <a href="">회원 탈퇴</a>
           <div class="horizontal-bar"></div>
@@ -49,17 +48,49 @@
               <div>1년</div>
             </div>
           </div>
-          <button type="submit">조회</button>
+          <button type="submit" class="search-button">조회</button>
         </div>
 
-        <div class="orderList">*최근 3개월간 구매하신 내역입니다.</div>
+        <div class="order-list">
+          <div class="order-info-message">
+            *최근 3개월간 구매하신 내역입니다.
+          </div>
+
+          <div class="main-horizontal-bar"></div>
+
+          <div class="order-list-content">
+            <!-- 주문상품 정렬 -->
+            <div class="ordered-item-container">
+              <div class="ordered-date">2023.07.01</div>
+              <div class="ordered-item">
+                <img src="../../public/asset/img/men-top-5.jpg" alt="" />
+                <div class="item-info">
+                  <div class="item-brand">브랜드명</div>
+                  <div class="item-name">상품명</div>
+                  <div class="item-option">옵션 : 상품옵션<!--js--></div>
+                  <div class="item-price-quantity">
+                    <div class="item-price">
+                      <strong>0000<!--js--></strong>원
+                    </div>
+                    <div class="item-quantity">/1<!--js-->개</div>
+                  </div>
+                  <div class="item-status-cancel">
+                    <div class="order-status">배송완료</div>
+                    <button type="submit" class="order-cancel-button">
+                      주문취소
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
     <!-- footer -->
     <footer>footer</footer>
 
     <!-- fontawesome icon 사용권한 -->
-    <script src="https://kit.fontawesome.com/6d5788fdc0.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/6d5788fdc0.js"></script> -->
   </body>
 </html>

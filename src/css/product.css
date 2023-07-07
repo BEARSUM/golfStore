@@ -3,7 +3,7 @@
 
 * {
   box-sizing: border-box;
-  /* outline: 1px solid #4f80ff; */
+  outline: 1px solid #4f80ff;
 }
 body {
   display: flex;
