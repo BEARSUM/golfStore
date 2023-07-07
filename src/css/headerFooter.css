@@ -1,132 +1,130 @@
 .header nav {
-    margin-top: 30px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    height: 50px;
-    background-color: white;
+  clear: both;
+  margin: 0px auto;
+  min-height: 144px;
+  top: 0px;
+  background-color: rgb(255, 255, 255);
+  padding: 0px 48px;
+  z-index: 10;
+  position: relative;
 }
+
 .main-category {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: stretch; /* .main-category의 자식 요소들의 높이를 늘려 전체 구분선을 표시합니다. */
-  }
-  .category-item { 
-    font-size: 24px; /* 글꼴 크기 설정 */
-  }
-  .separator {
-    width: 1px;
-    background-color: gray;
-    margin: 0 10px;
-  }
-  
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch; /* .main-category의 자식 요소들의 높이를 늘려 전체 구분선을 표시합니다. */
+}
+.category-item {
+  font-size: 24px; /* 글꼴 크기 설정 */
+}
+.separator {
+  width: 1px;
+  background-color: gray;
+  margin: 0 10px;
+}
+
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
 }
 .search {
-    display: flex;
-    justify-content: flex-start;
-    flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 1;
 }
 .search input {
-    border: none;
-    outline: none;
-  }
-  
-  .search i {
-    margin-left: 5px; /* 돋보기 아이콘과 입력란 사이의 간격을 조정합니다 */
-  }
-  
-  .header .menuOnTopright .headerMenu li a {
-    color: black;
-    opacity: 60%;
-    font-weight: 500;
-    margin-left: 15px;
-  }
-  
-  .header .menuOnTopright .headerMenu li a:hover {
-    color: #bd3651;
-    opacity: 60%;
-    font-weight: 500;
-    margin-left: 15px;
-  }
-  
-  .menuOnTopright .headerMenu {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .mainLogo {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-direction: row-reverse;
-    max-width: 200px; /* 좌우로 늘리고자 하는 너비 값으로 조정해주세요 */
+  border: none;
+  outline: none;
+}
+
+.search i {
+  margin-left: 5px; /* 돋보기 아이콘과 입력란 사이의 간격을 조정합니다 */
+}
+
+.header .menuOnTopright .headerMenu li a {
+  color: black;
+  opacity: 60%;
+  font-weight: 500;
+  margin-left: 15px;
+}
+
+.header .menuOnTopright .headerMenu li a:hover {
+  color: #bd3651;
+  opacity: 60%;
+  font-weight: 500;
+  margin-left: 15px;
+}
+
+.menuOnTopright .headerMenu {
+  display: flex;
+  flex-direction: row;
+}
+
+.mainLogo {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row-reverse;
+  max-width: 200px; /* 좌우로 늘리고자 하는 너비 값으로 조정해주세요 */
   max-height: 150px;
-  }
-  
+}
 
 .menuOnTopright {
-    display: flex;
-    justify-content: flex-end;
-    flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
 }
- 
 
 .footerbody {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    margin-top: 3rem;
-    margin-left: 5.5rem;
-    display: flex;
-    flex-direction: column;
-    font-size: small;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 3rem;
+  margin-left: 5.5rem;
+  display: flex;
+  flex-direction: column;
+  font-size: small;
 }
-  
-  .footerCompany {
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-  
-  .businessInfo {
-    margin-bottom: 10px;
-  }
-  
-  .footerContents {
-    margin-bottom: 10px;
-  }
-  
-  .footerContents a {
-    margin-right: 10px;
-    color: black;
-    opacity: 0.5;
-  }
-  
-  .businessDetailOne {
-    margin-bottom: 10px;
-  }
-  
-  .businessDetailOne span {
-    margin-right: 5px;
-  }
-  
-  .businessDetailTwo {
-    margin-bottom: 10px;
-  }
-  
-  .businessDetailTwo span {
-    margin-right: 5px;
-  }
-  
-  .finalFooter {
-    margin-bottom: 3rem;
-  }
-  
+
+.footerCompany {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.businessInfo {
+  margin-bottom: 10px;
+}
+
+.footerContents {
+  margin-bottom: 10px;
+}
+
+.footerContents a {
+  margin-right: 10px;
+  color: black;
+  opacity: 0.5;
+}
+
+.businessDetailOne {
+  margin-bottom: 10px;
+}
+
+.businessDetailOne span {
+  margin-right: 5px;
+}
+
+.businessDetailTwo {
+  margin-bottom: 10px;
+}
+
+.businessDetailTwo span {
+  margin-right: 5px;
+}
+
+.finalFooter {
+  margin-bottom: 3rem;
+}
