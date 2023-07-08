@@ -1,0 +1,99 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/cart.css" />
+    <link rel="stylesheet" href="/assets/css/headerFooter.css" />
+    <script
+      src="https://kit.fontawesome.com/667a5e19a9.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- bulma css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+  </head>
+</html>
+<header class="header">
+  <nav class="" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="search">
+        <input type="text" placeholder="Search..." />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+
+      <div class="mainLogo">
+        <img src="/assets/img/pageLogo2 (1).png" />
+      </div>
+
+      <div class="menuOnTopright">
+        <ul class="headerMenu" id="#">
+          <li id="login"><a href="/login">로그인</a></li>
+          <!-- <li id="logout" class="hidden"><a href="/">로그아웃</a></li> -->
+          <li id="adminPage" class="hidden">
+            <!-- <a href="/admin">관리자 페이지</a> -->
+          </li>
+          <li id="edit" class="hidden">
+            <!-- <a href="/edit">회원정보수정</a> -->
+          </li>
+          <li id="seeOrder" class="hidden">
+            <a href="/changeOrder">주문정보조회</a>
+          </li>
+
+          <li id="register">
+            <a href="/register">
+              <i class="fa-solid fa-user-plus"></i>회원가입
+            </a>
+          </li>
+          <li>
+            <a href="/cart.html" aria-current="page">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-category">
+      <div class="category-item">HOME</div>
+      <div class="separator"></div>
+      <div class="category-item">BRAND</div>
+      <div class="category-item">MEN</div>
+      <div class="category-item">WOMEN</div>
+      <div class="category-item">SHOES</div>
+      <div class="category-item">BAG</div>
+      <div class="category-item">ACC</div>
+    </div>
+  </nav>
+</header>
+
+
+    <div class="cdn">
+      <div>
+        <form>
+          <article class="cart-wrap">
+            <h3>장바구니</h3>
+            <ul class="cart-step">
+              <span class="active">장바구니</span>
+              <span>주문서작성</span>
+              <span class="last"> 주문완료</span>
+            </ul>
+            "로그인 후, 더욱 다양한 혜택을 이용하세요 ! "
+            <a href="login.html">로그인 ></a>
+            <div class="no-result">
+              <p>담긴 상품이 없습니다.</p>
+              <a
+                href="/"
+                data-ga-event-category="PC_CART"
+                data-ga-event-action="담긴상품없음"
+                data-ga-event-label="메인이동"
+                >홈으로 이동</a
+              >
+            </div>
+          </article>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
