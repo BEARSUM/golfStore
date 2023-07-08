@@ -6,6 +6,9 @@
   outline: 1px solid #4f80ff;
 }
 
+.my-info-container {
+  margin: 0 15%;
+}
 .recent-order-type {
   display: flex;
   flex-flow: row;
@@ -25,4 +28,9 @@
 .recent-order-type > div:nth-child(1) {
   background-color: var(--black);
   color: white;
+}
+
+.general-info > div {
+  display: flex;
+  flex-flow: row;
 }
