@@ -1,9 +1,9 @@
-@import "../../public/css/reset.css";
-@import "../../public/css/variables.css";
+@import "/assets/css/reset.css";
+@import "/assets/css/variables.css";
 
 * {
   box-sizing: border-box;
-  outline: 1px solid #4f80ff;
+  /* outline: 1px solid #4f80ff; */
 }
 body {
   display: flex;

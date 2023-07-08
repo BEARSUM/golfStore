@@ -7,7 +7,7 @@ for (let i = 1; i <= 16; i++) {
 
   item.innerHTML = `
     <div class="item-row">
-                <img id="itemId" src="../../public/asset/img/men-top-${i}.jpg" alt="" />
+                <img id="itemId" src="/assets/img/men-top-${i}.jpg" alt="" />
                 <i class="fa-solid fa-star"></i>
               </div>
               <div class="item-row">
