@@ -1,0 +1,36 @@
+@import "/assets/css/reset.css";
+@import "/assets/css/variables.css";
+
+* {
+  box-sizing: border-box;
+  outline: 1px solid #4f80ff;
+}
+
+.my-info-container {
+  margin: 0 15%;
+}
+.recent-order-type {
+  display: flex;
+  flex-flow: row;
+
+  margin-bottom: 60px;
+}
+.recent-order-type > div {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+
+  font-size: 14px;
+  padding: 17px 0 15px;
+  border: solid 1px var(--lightGray);
+  cursor: pointer;
+}
+.recent-order-type > div:nth-child(1) {
+  background-color: var(--black);
+  color: white;
+}
+
+.general-info > div {
+  display: flex;
+  flex-flow: row;
+}
