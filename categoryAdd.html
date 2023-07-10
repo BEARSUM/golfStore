@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/css/manageCategory.css" rel="stylesheet" />
+
+    <script defer src="assets/js/admin.js"></script>
+    <script src="https://kit.fontawesome.com/6d5788fdc0.js"></script>
+  </head>
+  <body>
+    <!-- header -->
+    <div class="header">header</div>
+
+    <div class="home-container">
+      <!--공통된 component:my-category-->
+      <div class="admin-category">
+        <div class="admin-title">관리자<!--js--></div>
+
+        <div class="admin-category-list">
+          <!-- js로 추후 구현 -->
+          <a href="/manageOrder.html">주문관리</a>
+          <a href="/manageMember.html">회원관리</a>
+          <a href="/manageCategory.html">카테고리 관리</a>
+          <a href="/manageProduct.html">제품 관리</a>
+          <div class="horizontal-bar"></div>
+        </div>
+      </div>
+
+      <div class="home-admin-info">
+        <div class="manage-category">
+          <div class="category-title">카테고리 관리</div>
+          <div class="categorytitle-explain">
+            카테고리를 등록, 수정, 삭제 할 수 있습니다.
+          </div>
+          <div>
+            <a href="categoryList.html" class="category-menu1">카테고리 목록</a>
+            <a href="categoryAdd.html" class="category-menu2">카테고리 등록</a>
+          </div>
+        </div>
+        <div class="category-form">
+          <div class="container">
+            <!-- form -->
+            <form>
+              <div class="field">
+                <label class="label">이름</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="카테고리 이름을 입력하세요."
+                    id="category-name"
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">코드</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="카테고리 코드를 입력하세요.(4자리 숫자)"
+                    id="category-code"
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">카테고리 이미지</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="이미지 URL를 입력하세요."
+                    id="category-url"
+                  />
+                </div>
+              </div>
+
+              <div class="category-control">
+                <div class="control">
+                  <input
+                    type="submit"
+                    value="등록하기"
+                    class="button-submit"
+                    id="btn-submit"
+                  />
+                </div>
+                <div class="control">
+                  <button class="button-cancel">Cancel</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

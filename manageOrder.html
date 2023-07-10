@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="assets/css/manageOrder.css" rel="stylesheet" />
+    <link href="assets/css/manage.css" rel="stylesheet" />
 
     <script defer src="/assets/js/admin.js"></script>
     <script src="https://kit.fontawesome.com/6d5788fdc0.js"></script>
@@ -22,28 +23,72 @@
           <!-- js로 추후 구현 -->
           <a href="/manageOrder.html">주문관리</a>
           <a href="/manageMember.html">회원관리</a>
-          <!-- 추후구현 <a href="">관심상품</a>
-          <a href="">리뷰</a> -->
-          <a href="/addCategory.html">카테고리 추가</a>
-          <a href="/addProduct.html">제품 추가</a>
+          <a href="/manageCategory.html">카테고리 관리</a>
+          <a href="/manageProduct.html">제품 추가</a>
           <div class="horizontal-bar"></div>
         </div>
       </div>
 
-      <div class="home-main">
-        <div class="home-admin-info">
-          <div class="manage">
-            <div class="title">주문 관리</div>
-            <div class="title-explain">
-              회원들의 주문내역을 확인, 취소할 수 있습니다.
-            </div>
+      <div class="home-admin-info">
+        <div class="manage-order">
+          <div class="order-title">주문 관리</div>
+          <div class="ordertitle-explain">
+            회원들의 주문내역을 확인, 취소할 수 있습니다.
           </div>
         </div>
 
         <!-- <div class="main-horizontal-bar"></div> -->
 
-        <div class="recent-order">
-          <div class="main-horizontal-bar"></div>
+        <div class="admin-list-section">
+          <table class="admin-list-table">
+            <thead>
+              <tr>
+                <th width="300">주문번호</th>
+                <th width="400">주문자이름</th>
+                <th width="300">주문총액</th>
+                <th width="300">상태관리</th>
+                <th width="200">삭제</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>3298512589230490</td>
+                <td>홍길동</td>
+                <td>10000</td>
+                <td>
+                  <div>
+                    <select>
+                      <option value="pending">배송준비중</option>
+                      <option value="shipping">배송중</option>
+                      <option value="shipped">배송완료</option>
+                      <option value="canceled">주문취소</option>
+                    </select>
+                  </div>
+                </td>
+                <td>
+                  <button class="delete-button">주문 삭제</button>
+                </td>
+              </tr>
+              <tr>
+                <td>3298512589230490</td>
+                <td>홍길동</td>
+                <td>10000</td>
+                <td>
+                  <div>
+                    <select>
+                      <option value="pending">배송준비중</option>
+                      <option value="shipping">배송중</option>
+                      <option value="shipped">배송완료</option>
+                      <option value="canceled">주문취소</option>
+                    </select>
+                  </div>
+                </td>
+                <td>
+                  <button class="button">주문 삭제</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

@@ -52,12 +52,10 @@
 
   background-color: var(--black);
 }
-.title {
-  font-size: 20px;
+.order-title {
+  font-size: 30px;
   margin-bottom: 10px;
 }
-.title-explain {
-  margin-bottom: 5px;
-}
-.manage {
+.ordertitle-explain {
+  margin-bottom: 30px;
 }

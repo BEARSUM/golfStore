@@ -1,0 +1,21 @@
+.admin-list-section {
+  max-width: 1000px;
+  /* margin: 5rem auto 2rem auto; */
+  /* margin-left: 450px; */
+  margin: 0px auto;
+}
+.admin-list-table {
+  text-align: center;
+  padding: 0;
+  width: 100%;
+  border: 1px solid #444444;
+  border-collapse: collapse;
+}
+thead {
+  font-weight: bold;
+}
+th,
+td {
+  border: 1px solid #444444;
+  padding: 10px;
+}

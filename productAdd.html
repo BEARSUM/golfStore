@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/css/manageProduct.css" rel="stylesheet" />
+
+    <script defer src="/assets/js/admin.js"></script>
+    <script src="https://kit.fontawesome.com/6d5788fdc0.js"></script>
+  </head>
+  <body>
+    <!-- header -->
+    <div class="header">header</div>
+
+    <div class="home-container">
+      <!--공통된 component:my-category-->
+      <div class="admin-category">
+        <div class="admin-title">관리자<!--js--></div>
+
+        <div class="admin-category-list">
+          <!-- js로 추후 구현 -->
+          <a href="/manageOrder.html">주문관리</a>
+          <a href="/manageMember.html">회원관리</a>
+          <a href="/manageCategory.html">카테고리 관리</a>
+          <a href="/manageProduct.html">제품 관리</a>
+          <div class="horizontal-bar"></div>
+        </div>
+      </div>
+
+      <div class="home-admin-info">
+        <div class="product-category">
+          <div class="product-title">제품 관리</div>
+          <div class="producttitle-explain">
+            제품을 등록, 수정, 삭제 할 수 있습니다.
+          </div>
+          <div>
+            <a href="productList.html" class="product-menu1">제품 목록</a>
+            <a href="productAdd.html" class="product-menu2">제품 등록</a>
+          </div>
+        </div>
+        <div class="product-section">
+          <form>
+            <div class="field">
+              <label class="label">제품 이름</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Text input"
+                  id="product-name"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">카테고리</label>
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select id="select-box">
+                    <option disabled selected>카테고리를 선택해주세요.</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">브랜드</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Text input"
+                  id="brand-name"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">요약 설명</label>
+              <div class="control">
+                <textarea
+                  class="textarea"
+                  placeholder="Textarea"
+                  id="product-description"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">제품 이미지</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="이미지 URL를 입력하세요."
+                  id="product-url"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">제품 상세 이미지</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="이미지 URL를 입력하세요."
+                  id="product-detail-url"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">재고 수</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Text input"
+                  id="product-stock"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">가격</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Text input"
+                  id="product-price"
+                />
+              </div>
+            </div>
+
+            <div class="product-control">
+              <div class="control">
+                <input
+                  type="submit"
+                  value="수정하기"
+                  class="button is-link"
+                  id="btn-submit"
+                />
+              </div>
+              <div class="control">
+                <button class="button-cancel" id="btn-cancel">Cancel</button>
+              </div>
+            </div>
+
+            <div class="control">
+              <button class="button-delete" id="btn-delete">삭제하기</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer>footer</footer>
+  </body>
+</html>
