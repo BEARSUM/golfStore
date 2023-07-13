@@ -7,6 +7,7 @@
     <link href="assets/css/manageCategory.css" rel="stylesheet" />
 
     <script defer src="assets/js/admin.js"></script>
+    <script defer src="assets/js/category.js" type="module"></script>
     <script src="https://kit.fontawesome.com/6d5788fdc0.js"></script>
   </head>
   <body>
@@ -46,43 +47,11 @@
               <tr>
                 <th>번호</th>
                 <th>카테고리</th>
-                <th>수정일</th>
                 <th>수정</th>
                 <th>삭제</th>
               </tr>
             </thead>
-            <tbody>
-              <tr class="category-list">
-                <td>1</td>
-                <td>men</td>
-                <td>2022-07-02</td>
-                <td>
-                  <div>
-                    <button class="change-button">수정</button>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <button class="delete-button">삭제</button>
-                  </div>
-                </td>
-              </tr>
-              <tr class="category-list">
-                <td>2</td>
-                <td>women</td>
-                <td>2022-06-12</td>
-                <td>
-                  <div>
-                    <button class="change-button">수정</button>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <button class="delete-button">삭제</button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
+            <tbody id="category-list"></tbody>
           </table>
         </div>
       </div>

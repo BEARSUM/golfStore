@@ -7,6 +7,7 @@
     <link href="assets/css/manageProduct.css" rel="stylesheet" />
 
     <script defer src="/assets/js/admin.js"></script>
+    <script defer src="/assets/js/products.js" type="module"></script>
     <script src="https://kit.fontawesome.com/6d5788fdc0.js"></script>
   </head>
   <body>
@@ -48,25 +49,11 @@
                 <th>상품명</th>
                 <th>판매가격</th>
                 <th>재고</th>
-                <th>수정일</th>
+                <th>삭제</th>
                 <th>수정</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>women</td>
-                <td>상품명</td>
-                <td>10000원</td>
-                <td>1개</td>
-                <td>30개</td>
-                <td>
-                  <button class="change-button" id="product-change">
-                    수정
-                  </button>
-                </td>
-              </tr>
-            </tbody>
+            <tbody id="product-list"></tbody>
           </table>
         </div>
       </div>
