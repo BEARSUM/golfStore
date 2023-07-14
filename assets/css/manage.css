@@ -19,3 +19,114 @@ td {
   border: 1px solid #444444;
   padding: 10px;
 }
+
+@import "/assets/css/reset.css";
+@import "/assets/css/variables.css";
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  background-color: white;
+}
+
+.userlist {
+  margin: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.userlist th,
+.userlist td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: 200px; /* 각 셀의 너비를 25%로 설정 */
+}
+
+.userlist th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.userlist tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+a {
+  color: rgb(73, 73, 73); /* 새로운 색상을 지정 */
+  text-decoration: none; /* 밑줄 제거 */
+}
+
+.user-detail-container {
+  margin: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.user-detail-container th,
+.user-detail-container td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: 400px; /* 각 셀의 너비를 25%로 설정 */
+}
+
+.user-detail-container th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.user-detail-container tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.admin-create {
+  margin-top: 20px;
+}
+
+.admin-create h2 {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.admin-create form {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+
+.admin-create form div {
+  margin-bottom: 10px;
+}
+
+.admin-create form label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.admin-create form input[type="email"],
+.admin-create form input[type="text"],
+.admin-create form input[type="password"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.admin-create form button[type="submit"] {
+  padding: 8px 16px;
+  background-color: #606360;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.admin-category-list a.highlight {
+  color: green;
+  font-weight: bold;
+}

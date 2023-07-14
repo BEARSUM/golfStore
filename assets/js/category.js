@@ -24,13 +24,14 @@ export async function deleteCategory(_id) {
 function categoriesTbody(categories) {
   const categoryList = document.querySelector('#category-list');
   categoryList.innerHTML = '';
+  console.log(categories);
   for (let i = 0; i < categories.length; i++) {
     const item = document.createElement('tr');
-    const { categoryName, _id } = categories[i];
-
-    item.innerHTML = `<tr>
+    const { parentCategoryId, categoryName, _id } = categories[i];
+    if (!parentCategoryId) {
+      item.innerHTML = `<tr>
                 <td>${i + 1}</td>
-                <td>${categoryName}</td>
+                <td >${categoryName}</td>
                 <td>
                   <div>
                     <button onclick="location.href='../categoryChange.html'" class="change-btn">수정</button>
@@ -42,6 +43,25 @@ function categoriesTbody(categories) {
                   </div>
                 </td>
               </tr>`;
+    } else {
+      const parentCategory = categories.find((c) => c._id === parentCategoryId);
+      item.innerHTML = `<tr>
+                <td>${i + 1}</td>
+                <td class='category-name'>${
+                  parentCategory.categoryName
+                }-${categoryName}</td>
+                <td>
+                  <div>
+                    <button onclick="location.href='../categoryChange.html'" class="change-btn">수정</button>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                     <button value="${_id}"  class="delete-btn">삭제</button>
+                  </div>
+                </td>
+              </tr>`;
+    }
     categoryList.appendChild(item);
 
     const deleteBtn = item.querySelector('.delete-btn');

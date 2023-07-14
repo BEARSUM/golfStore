@@ -40,9 +40,9 @@
 
   cursor: pointer;
 }
-
-.admin-category-list > a:nth-child(1) {
-  color: var(--green);
+.admin-category-list a.highlight {
+  color: green;
+  font-weight: bold;
 }
 .horizontal-bar {
   margin-top: 80px;
@@ -75,7 +75,29 @@
 .product-menu1 {
   margin-right: 30px;
 }
-.product-table {
+.product-section {
+  text-align: center;
+  margin: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: 200px; /* 각 셀의 너비를 25%로 설정 */
+}
+
+.product-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.product-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+/* .product-table {
   width: 900px;
   text-align: center;
 }
@@ -89,7 +111,7 @@ th {
 td {
   border: 1px solid #444444;
   padding: 10px;
-}
+} */
 .label {
   font-weight: bold;
 }

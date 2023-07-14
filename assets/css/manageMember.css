@@ -1,5 +1,5 @@
-@import '/assets/css/reset.css';
-@import '/assets/css/variables.css';
+@import "/assets/css/reset.css";
+@import "/assets/css/variables.css";
 
 * {
   box-sizing: border-box;
@@ -41,10 +41,6 @@
   cursor: pointer;
 }
 
-/* js */
-.admin-category-list > a:nth-child(1) {
-  color: var(--green);
-}
 .horizontal-bar {
   margin-top: 80px;
   width: 70%;

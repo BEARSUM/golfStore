@@ -40,11 +40,12 @@
 
   cursor: pointer;
 }
-
-/* js */
-.admin-category-list > a:nth-child(1) {
-  color: var(--green);
+.admin-category-list a.highlight {
+  color: green;
+  font-weight: bold;
 }
+/* js */
+
 .horizontal-bar {
   margin-top: 80px;
   width: 70%;
@@ -58,4 +59,26 @@
 }
 .ordertitle-explain {
   margin-bottom: 30px;
+}
+.order-section {
+  text-align: center;
+  margin: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.order-table th,
+.order-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: 200px; /* 각 셀의 너비를 25%로 설정 */
+}
+
+.order-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.order-table tr:nth-child(even) {
+  background-color: #f9f9f9;
 }

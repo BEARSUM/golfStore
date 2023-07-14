@@ -8,7 +8,7 @@
     <link href="assets/css/manage.css" rel="stylesheet" />
 
     <script defer src="/assets/js/admin.js"></script>
-    <script defer src="assets/js/member.js" type="module"></script>
+    <script defer src="assets/js/memberDetail.js" type="module"></script>
     <script src="https://kit.fontawesome.com/6d5788fdc0.js"></script>
     <script defer type="module" src="/assets/js/headerUse.js"></script>
     
@@ -16,7 +16,6 @@
   </head>
   <body>
     <!-- header -->
-    <div class="header">header</div>
 
     <div class="home-container">
       <!--공통된 component:my-category-->
@@ -27,14 +26,21 @@
           <!-- js로 추후 구현 -->
           <a href="/manageOrder.html">주문관리</a>
           <a href="/manageMember.html">회원관리</a>
+          <a href="/manageAdmin.html">관리자관리</a>
           <a href="/manageCategory.html">카테고리 관리</a>
           <a href="/manageProduct.html">상품 관리</a>
           <div class="horizontal-bar"></div>
         </div>
       </div>
 
+      <div class="home-admin-info">
+        <div class="manage-member">
+          <div class="member-title">회원 정보</div>
+        </div>
 
-    <!-- footer -->
-    <footer>footer</footer>
+        <div class="user-detail-container"></div>
+      </div>
+
+
   </body>
 </html>

@@ -4,16 +4,18 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="assets/css/admin.css" rel="stylesheet" />
+    <link href="assets/css/manageMember.css" rel="stylesheet" />
+    <link href="assets/css/manage.css" rel="stylesheet" />
 
     <script defer src="/assets/js/admin.js"></script>
+    <script defer src="assets/js/manageAdmin.js" type="module"></script>
     <script src="https://kit.fontawesome.com/6d5788fdc0.js"></script>
     <script defer type="module" src="/assets/js/headerUse.js"></script>
+
     <link href="assets/css/headerFooter.css" rel="stylesheet" />
   </head>
   <body>
     <!-- header -->
-    <div class="header">header</div>
 
     <div class="home-container">
       <!--공통된 component:my-category-->
@@ -31,19 +33,13 @@
         </div>
       </div>
 
-      <div class="home-main">
-        <div class="home-member-info">
-          <div class="member-name">
-            <strong><!--js-->홍길동</strong>님
-          </div>
-          <div class="member-email"><!--js-->홍길동@email.com</div>
+      <div class="home-admin-info">
+        <div class="manage-member">
+          <div class="member-title">관리자 관리</div>
         </div>
 
-        <!-- <div class="main-horizontal-bar"></div> -->
-
-        <div class="recent-order">
-          <div class="main-horizontal-bar"></div>
-        </div>
+        <div class="userlist"></div>
+        <div class="admin-create"></div>
       </div>
     </div>
 

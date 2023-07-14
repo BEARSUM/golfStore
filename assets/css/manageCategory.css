@@ -40,9 +40,9 @@
 
   cursor: pointer;
 }
-
-.admin-category-list > a:nth-child(1) {
-  color: var(--green);
+.admin-category-list a.highlight {
+  color: green;
+  font-weight: bold;
 }
 .horizontal-bar {
   margin-top: 80px;
@@ -82,7 +82,7 @@
   /* margin-left: 450px; */
   margin: 0px auto;
 }
-.category-table {
+/* .category-table {
   text-align: center;
   padding: 0;
   width: 500px;
@@ -100,6 +100,28 @@ th {
 td {
   border: 1px solid #444444;
   padding: 10px;
+} */
+.category-section {
+  text-align: center;
+  margin: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.category-table th,
+.category-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: 200px; /* 각 셀의 너비를 25%로 설정 */
+}
+
+.category-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.category-table tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 .label {
   font-weight: bold;

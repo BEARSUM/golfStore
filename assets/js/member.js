@@ -1,4 +1,3 @@
-// JavaScript 파일 (member.js)
 document.addEventListener("DOMContentLoaded", async function () {
   try {
     const token =
@@ -22,9 +21,21 @@ document.addEventListener("DOMContentLoaded", async function () {
     const userTable = document.querySelector(".userlist");
     userTable.innerHTML = "";
 
+    // 테이블 헤더 생성
+    const tableHeader = document.createElement("tr");
+    tableHeader.innerHTML = `
+      <th>이메일</th>
+      <th>이름</th>
+      <th>전화번호</th>
+      <th>상세 보기</th>
+    `;
+    userTable.appendChild(tableHeader);
+
+    // 사용자 정보 행 생성
     users.forEach((user) => {
       const tableRow = document.createElement("tr");
-      tableRow.innerHTML = `
+      if (user.isAdmin != true) {
+        tableRow.innerHTML = `
         <td>${user.email}</td>
         <td>${user.name}</td>
         <td>${user.phoneNumber}</td>
@@ -32,6 +43,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           <a href="manageMemberDetail.html?id=${user._id}">자세히 보기</a>
         </td>
       `;
+      }
 
       userTable.appendChild(tableRow);
     });
