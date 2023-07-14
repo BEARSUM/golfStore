@@ -17,7 +17,7 @@ const categoryProductsElement = document.getElementById("categoryProducts");
 const forBeginnerProductsElement = document.getElementById(
   "forBeginnerProducts"
 );
-const URI = "http://kdt-sw-5-team06.elicecoding.com";
+const URI = "http://kdt-sw-5-team06.elicecoding.com:3000";
 const categoryListUrl = `${URI}/category`;
 
 async function forBeginner() {

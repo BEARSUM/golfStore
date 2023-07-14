@@ -43,7 +43,7 @@ async function getAPI(url, params) {
 async function leaveUser() {
   try {
     const data = await getAPI(
-      "http://kdt-sw-5-team06.elicecoding.com/users/:userId",
+      "http://kdt-sw-5-team06.elicecoding.com:3000/users/:userId",
       { method: "DELETE" }
     );
     console.log(data);

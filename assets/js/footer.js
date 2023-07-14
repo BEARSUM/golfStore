@@ -21,7 +21,6 @@ function createFooter() {
           <span>대표전화 : 1234-1234(발신자 부담전화)</span>
           <span>FAX : 0123-456-7899(지역번호 공통)</span>
           <span>서울시 서울특별시 통신판매업신고번호 : 제 653호 </span>
-          <button>사업자 정보 확인</button>
         </div>
         <div class="finalFooter">©THE GOLF all rights reserved</div>
       </div>

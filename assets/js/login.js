@@ -1,4 +1,4 @@
-const URI = "http://kdt-sw-5-team06.elicecoding.com/users/sign-in";
+const URI = "http://kdt-sw-5-team06.elicecoding.com:3000/users/sign-in";
 
 const idInput = document.querySelector("#idInput");
 const passwordInput = document.querySelector("#passwordInput");

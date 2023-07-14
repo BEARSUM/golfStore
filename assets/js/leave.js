@@ -16,7 +16,7 @@ leaveBtn.addEventListener("click", () => {
 });
 
 //회원 탈퇴 api
-const URI = "http://kdt-sw-5-team06.elicecoding.com";
+const URI = "http://kdt-sw-5-team06.elicecoding.com:3000";
 const userListUrl = `${URI}/users/${userId}`;
 
 async function leaveUser(userId) {

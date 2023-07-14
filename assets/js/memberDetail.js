@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMTFAYWRtaW4uY29tIiwiaWF0IjoxNjg5MzMwNDE4LCJleHAiOjE2ODk0MTY4MTh9.rR-quAzqpC9ihN8kejwNCsjMVPlQ0D4L-azdrsyqXDM";
 
     const response = await fetch(
-      `http://kdt-sw-5-team06.elicecoding.com/users/${userId}`,
+      `http://kdt-sw-5-team06.elicecoding.com:3000/users/${userId}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

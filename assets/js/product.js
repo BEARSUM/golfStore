@@ -1,4 +1,4 @@
-const URI = "http://kdt-sw-5-team06.elicecoding.com";
+const URI = "http://kdt-sw-5-team06.elicecoding.com:3000";
 
 const categoryListUrl = `${URI}/category`;
 
@@ -89,6 +89,7 @@ async function getProducts(clickedCategoryId) {
     const jsonData = await res.json();
     let products = jsonData.products;
     console.log(products);
+    count = 0;
 
     products.forEach((el) => {
       console.log(el);

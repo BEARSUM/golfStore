@@ -3,7 +3,7 @@ const categoryContainer = document.querySelector(".main-category");
 async function fetchCategories() {
   try {
     const response = await fetch(
-      "http://kdt-sw-5-team06.elicecoding.com/category"
+      "http://kdt-sw-5-team06.elicecoding.com:3000/category"
     );
     const data = await response.json();
     return data.categories;

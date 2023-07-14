@@ -1,4 +1,4 @@
-const URI = "http://kdt-sw-5-team06.elicecoding.com";
+const URI = "http://kdt-sw-5-team06.elicecoding.com:3000";
 
 async function getProductSearchResults(searchValue) {
   const productsUrl = `${URI}/products`;

@@ -2,7 +2,7 @@
 const parentCategoryId = new URLSearchParams(window.location.search).get("c");
 
 async function getCategory() {
-  const URI = "http://kdt-sw-5-team06.elicecoding.com";
+  const URI = "http://kdt-sw-5-team06.elicecoding.com:3000";
   const categoryListUrl = `${URI}/category`;
 
   try {
@@ -45,7 +45,7 @@ async function createHeader() {
               
               <li id="logout" class="hidden"><a href="/">로그아웃</a></li> 
               <li id="adminPage" class="hidden">
-                <a href="/admin.html">관리자 페이지</a> 
+                <a href="/manageOrder.html">관리자 페이지</a> 
               </li>
               <li id="edit" class="hidden">
                 <a href="/my.html">마이페이지</a> 

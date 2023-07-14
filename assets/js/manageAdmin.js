@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMTFAYWRtaW4uY29tIiwiaWF0IjoxNjg5MzMwNDE4LCJleHAiOjE2ODk0MTY4MTh9.rR-quAzqpC9ihN8kejwNCsjMVPlQ0D4L-azdrsyqXDM";
 
     const response = await fetch(
-      "http://kdt-sw-5-team06.elicecoding.com/users",
+      "http://kdt-sw-5-team06.elicecoding.com:3000/users",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     deleteButtons.forEach((button) => {
       button.addEventListener("click", async function () {
         const userId = button.dataset.userId;
-        const deleteUrl = `http://kdt-sw-5-team06.elicecoding.com/users/${userId}`;
+        const deleteUrl = `http://kdt-sw-5-team06.elicecoding.com:3000/users/${userId}`;
 
         try {
           const deleteResponse = await fetch(deleteUrl, {
@@ -109,7 +109,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       const phoneNumber = adminCreateForm.elements.phoneNumber.value;
       const password = adminCreateForm.elements.password.value;
 
-      const signUpUrl = "http://kdt-sw-5-team06.elicecoding.com/users/sign-up";
+      const signUpUrl =
+        "http://kdt-sw-5-team06.elicecoding.com:3000/users/sign-up";
       const signUpData = {
         email: email,
         name: name,

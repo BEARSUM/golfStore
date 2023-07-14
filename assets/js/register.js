@@ -3,7 +3,7 @@ const registerButton = document.querySelector("#registerButton");
 // API 요청 함수
 async function fetchAPI(data) {
   const response = await fetch(
-    "http://kdt-sw-5-team06.elicecoding.com/users/sign-up",
+    "http://kdt-sw-5-team06.elicecoding.com:3000/users/sign-up",
     {
       method: "POST",
       headers: {

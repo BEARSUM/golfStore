@@ -23,7 +23,7 @@ function changeTab(e) {
 
 //특정 회원 조회
 let userData = [];
-const URI = "http://kdt-sw-5-team06.elicecoding.com";
+const URI = "http://kdt-sw-5-team06.elicecoding.com:3000";
 const token = localStorage.getItem("token");
 
 const userUrl = `${URI}/users/token`;
