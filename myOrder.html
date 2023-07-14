@@ -9,19 +9,20 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
-    <link href="assets/css/headerFooter.css" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/myOrder.css" />
+
+    <link href="assets/css/headerFooter.css" rel="stylesheet" />
+    <script defer type="module" src="/assets/js/headerUse.js"></script>
+    <script defer type="module" src="/assets/js/FooterUse.js"></script>
 
     <script src="https://kit.fontawesome.com/6d5788fdc0.js"></script>
     <script defer src="/assets/js/myOrder.js"></script>
-    <script defer type="module" src="/assets/js/headerUse.js"></script>
-    <script defer type="module" src="/assets/js/footerUse.js"></script>
+
     <title>THE GOLF</title>
   </head>
 
   <body>
     <!-- header -->
-    <div class="header">header</div>
 
     <div class="my-order-container">
       <!--공통된 component:my-category-->
@@ -48,7 +49,7 @@
             <div class="item-name-search">
               <div>상품</div>
 
-              <input type="text" placeholder="상품명을 입력해 주세요."" />
+              <input type="text" placeholder="상품명을 입력해 주세요." />
             </div>
             <div class="order-period">
               <span class="period-division">기간</span>
@@ -70,7 +71,7 @@
 
           <div class="order-list-content">
             <!-- 주문상품 정렬 -->
-            <div class="ordered-item-container">
+            <!-- <div class="ordered-item-container">
               <div class="ordered-date">2023.07.01</div>
               <div class="ordered-item">
                 <img src="/assets/img/men-top-5.jpg" alt="" />
@@ -90,12 +91,11 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
     </div>
     <!-- footer -->
-    <footer>footer</footer>
   </body>
 </html>

@@ -54,10 +54,11 @@ async function getProduct() {
       const savedCartList = JSON.parse(localStorage.getItem("cart-list")) || {};
 
       //선택된 수량 더하기
+      productDetail.quantity = 0;
       productDetail.quantity += quantityValue;
-      console.log(quantityValue);
+      console.log(productDetail.quantity);
       productDetail.size = selectedSize;
-      let { _id, size } = productDetail;
+      let { _id, size, quantity } = productDetail;
 
       const existingItem = Object.values(savedCartList).find(
         (ob) => ob._id === _id && ob.size === size
@@ -65,7 +66,7 @@ async function getProduct() {
       if (existingItem) {
         productDetail = savedCartList[`${_id}-${size}`];
       } else {
-        productDetail.quantity = 0;
+        quantity = 0;
       }
 
       const newList = JSON.stringify({
@@ -87,20 +88,19 @@ async function getProduct() {
         location.href = "/cart.html";
       }
     });
+
+    // //구매하기
+    let buyButton = document.querySelector(".option-purchase");
+    buyButton.addEventListener("click", () => {
+      addToCart();
+      // 구매 페이지로 이동
+      window.location.href = "order.html";
+    });
   } catch (error) {
     console.log(error);
   }
 }
 
-// //구매하기
-// let buyButton = document.querySelector(".option-purchase");
-// buyButton.addEventListener("click", () => {
-//   // save product data to the local storage
-//   localStorage.setItem("purchase-product", JSON.stringify(productDetail));
-
-//   // 구매 페이지로 이동
-//   window.location.href = "purchase.html";
-// });
 //사이즈옵션을 변경하면 실행되는 함수
 let selectedSize = "";
 function selectSize() {

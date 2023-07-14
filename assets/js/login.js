@@ -13,6 +13,7 @@ async function fetchAPI(data) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
     body: JSON.stringify(data),
   });
@@ -23,6 +24,7 @@ async function fetchAPI(data) {
 
     // 토큰 값을 로컬 스토리지에 저장
     localStorage.setItem("token", token);
+    localStorage.setItem("Authorization", `Bearer ${token}`);
 
     //alert("로그인에 성공하였습니다!");
     window.location.href = "/index.html";
@@ -37,7 +39,7 @@ function handleLogout(e) {
 
   // 로컬 스토리지에서 토큰을 삭제합니다.
   localStorage.removeItem("token");
-
+  localStorage.removeItem("Authorization");
   //alert("로그아웃에 성공하였습니다!");
   window.location.href = "/index.html"; // 로그아웃 후 이동할 로그인 페이지의 URL을 적어주세요.
 }

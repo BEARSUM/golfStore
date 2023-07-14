@@ -1,9 +1,9 @@
-import { API_URL, getAPI } from './common.js';
+import { API_URL, getAPI } from "./common.js";
 getCategories();
 async function getCategories() {
   try {
     const data = await getAPI(`${API_URL}/category`, {
-      method: 'GET',
+      method: "GET",
     });
     categoriesTbody(data.categories);
   } catch (e) {
@@ -13,7 +13,7 @@ async function getCategories() {
 export async function deleteCategory(_id) {
   try {
     await getAPI(`${API_URL}/category/${_id}`, {
-      method: 'DELETE',
+      method: "DELETE",
     });
     getCategories();
   } catch (e) {
@@ -22,11 +22,11 @@ export async function deleteCategory(_id) {
 }
 
 function categoriesTbody(categories) {
-  const categoryList = document.querySelector('#category-list');
-  categoryList.innerHTML = '';
+  const categoryList = document.querySelector("#category-list");
+  categoryList.innerHTML = "";
   console.log(categories);
   for (let i = 0; i < categories.length; i++) {
-    const item = document.createElement('tr');
+    const item = document.createElement("tr");
     const { parentCategoryId, categoryName, _id } = categories[i];
     if (!parentCategoryId) {
       item.innerHTML = `<tr>
@@ -64,8 +64,8 @@ function categoriesTbody(categories) {
     }
     categoryList.appendChild(item);
 
-    const deleteBtn = item.querySelector('.delete-btn');
-    deleteBtn.addEventListener('click', function (event) {
+    const deleteBtn = item.querySelector(".delete-btn");
+    deleteBtn.addEventListener("click", function (event) {
       deleteCategory(event.currentTarget.value);
     });
   }

@@ -1,13 +1,3 @@
-//data 예시
-// data = [{}, {}, {}];
-
-//현재 비밀번호 일치 여부 확인 -미완
-// const oldPwInput = document.querySelector("#user-old-pw");
-
-// function checkOldPw(){
-//   if(){}
-// }
-
 //새 비밀번호 유효성 검사
 const newPwInput = document.querySelector("#user-new-pw");
 
@@ -54,3 +44,74 @@ function showPwCheck() {
   }
 }
 newPwCheckInput.addEventListener("keyup", showPwCheck);
+
+//특정 회원 조회
+let userData = [];
+const URI = "http://kdt-sw-5-team06.elicecoding.com";
+const token = localStorage.getItem("token");
+
+const userUrl = `${URI}/users/token`;
+async function getUser() {
+  // fetch 요청 옵션 설정
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      // 헤더에 토큰 추가
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  try {
+    const res = await fetch(`${userUrl}/${token}`, options);
+    if (!res.ok) return;
+    userData = await res.json();
+    console.log("userData", userData);
+  } catch (error) {
+    console.log(error);
+  }
+}
+//회원 아이디
+let userId = "";
+getUser().then(() => {
+  userId = userData._id;
+  // console.log(userId);
+});
+//회원정보수정요청
+document
+  .querySelector(".my-info-container")
+  .addEventListener("submit", function (event) {
+    // form의 기본 동작(페이지 리로드 등)을 막습니다.
+    event.preventDefault();
+
+    // 입력된 비밀번호를 가져옵니다.
+    const userOldPasswordValue = document.querySelector("#user-old-pw").value;
+    const userNewPasswordValue =
+      document.querySelector("#user-new-pw-check").value;
+
+    // 변경될 사용자 정보를 서버에 PUT 요청으로 보냅니다.
+    fetch(`${URI}/users/changePassword/${userId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${userId}`,
+      },
+      body: JSON.stringify({
+        previousPassword: userOldPasswordValue,
+        password: userNewPasswordValue,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("수정성공", data, userData);
+        // 요청이 성공했을 때 처리
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        // 요청이 실패했을 때 처리
+      });
+  });
+
+const cancelBtn = document.querySelector("#cancel-button");
+cancelBtn.addEventListener("click", () => {
+  window.location.href = "/index.html";
+});

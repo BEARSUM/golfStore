@@ -1,8 +1,8 @@
 // header.js
-const parentCategoryId = new URLSearchParams(window.location.search).get('c');
+const parentCategoryId = new URLSearchParams(window.location.search).get("c");
 
 async function getCategory() {
-  const URI = 'http://kdt-sw-5-team06.elicecoding.com';
+  const URI = "http://kdt-sw-5-team06.elicecoding.com";
   const categoryListUrl = `${URI}/category`;
 
   try {
@@ -18,14 +18,14 @@ async function getCategory() {
 }
 
 async function createHeader() {
-  const existingHeader = document.querySelector('header');
+  const existingHeader = document.querySelector("header");
 
   if (existingHeader) {
     existingHeader.remove();
   }
 
-  const header = document.createElement('header');
-  header.className = 'w-full';
+  const header = document.createElement("header");
+  header.className = "w-full";
   header.innerHTML = `
     <div class="header">
       <nav class="" role="navigation" aria-label="main navigation">
@@ -45,10 +45,10 @@ async function createHeader() {
               
               <li id="logout" class="hidden"><a href="/">로그아웃</a></li> 
               <li id="adminPage" class="hidden">
-                <a href="/admin">관리자 페이지</a> 
+                <a href="/admin.html">관리자 페이지</a> 
               </li>
               <li id="edit" class="hidden">
-                <a href="/edit">회원정보수정</a> 
+                <a href="/my.html">마이페이지</a> 
               </li>
               <li id="seeOrder" class="hidden">
                 <a href="/changeOrder">주문정보조회</a> 
@@ -59,7 +59,7 @@ async function createHeader() {
                   <i class="fa-solid fa-user-plus"></i>회원가입
                 </a>
               </li>
-              <li>
+              <li id="cart" class = "hidden">
                 <a href="/cart.html" aria-current="page">
                   <i class="fa-solid fa-bag-shopping"></i>
                 </a>
@@ -80,7 +80,7 @@ async function createHeader() {
 
   document.body.prepend(header);
 
-  const mainCategoryDiv = header.querySelector('.main-category');
+  const mainCategoryDiv = header.querySelector(".main-category");
   const categories = await getCategory();
 
   const parentCategories = categories.filter(
@@ -91,38 +91,68 @@ async function createHeader() {
   );
 
   parentCategories.forEach((parentCategory) => {
-    const parentCategoryItem = document.createElement('div');
-    parentCategoryItem.className = 'category-item';
+    const parentCategoryItem = document.createElement("div");
+    parentCategoryItem.className = "category-item";
     parentCategoryItem.innerHTML = `
-      <a href="/product.html?c=${parentCategory.categoryName}">${parentCategory.categoryName}</a>
+    <a href="/product.html?c=${parentCategory._id}">${parentCategory.categoryName}</a>
       <div class="sub-categories hidden"></div>
     `;
 
     mainCategoryDiv.appendChild(parentCategoryItem);
 
     const subCategoriesDiv =
-      parentCategoryItem.querySelector('.sub-categories');
+      parentCategoryItem.querySelector(".sub-categories");
 
     childCategories
       .filter(
         (childCategory) => childCategory.parentCategoryId === parentCategory.id
       )
       .forEach((childCategory) => {
-        const childCategoryItem = document.createElement('div');
+        const childCategoryItem = document.createElement("div");
         childCategoryItem.innerHTML = `<a href="/product.html?c=${childCategory.categoryName}">${childCategory.categoryName}</a>`;
         subCategoriesDiv.appendChild(childCategoryItem);
       });
 
-    parentCategoryItem.addEventListener('mouseenter', () => {
-      subCategoriesDiv.classList.remove('hidden');
+    parentCategoryItem.addEventListener("mouseenter", () => {
+      subCategoriesDiv.classList.remove("hidden");
     });
 
-    parentCategoryItem.addEventListener('mouseleave', () => {
-      subCategoriesDiv.classList.add('hidden');
+    parentCategoryItem.addEventListener("mouseleave", () => {
+      subCategoriesDiv.classList.add("hidden");
     });
   });
 }
 
-document.addEventListener('DOMContentLoaded', createHeader);
+function handleLogout(e) {
+  e.preventDefault();
+
+  // 로컬 스토리지에서 토큰을 삭제합니다.
+  localStorage.removeItem("token");
+  localStorage.removeItem("Authorization");
+
+  //alert("로그아웃에 성공하였습니다!");
+  window.location.href = "/index.html";
+}
+
+function handleSearch() {
+  const input = document.querySelector('.search input[type="text"]');
+  const searchValue = input.value;
+
+  // 검색어를 기반으로 productSearch.html로 이동합니다.
+  window.location.href = `productSearch.html?search=${searchValue}`;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  createHeader();
+
+  // DOM이 완전히 로드된 후에 로그아웃 버튼에 이벤트 리스너를 추가
+  setTimeout(() => {
+    const logoutButton = document.querySelector("#logout a");
+    if (logoutButton) logoutButton.addEventListener("click", handleLogout);
+
+    const searchIcon = document.querySelector(".search i.fa-magnifying-glass");
+    if (searchIcon) searchIcon.addEventListener("click", handleSearch);
+  }, 0);
+});
 
 export { createHeader };

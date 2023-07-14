@@ -14,60 +14,10 @@
     <script src="https://kit.fontawesome.com/667a5e19a9.js"></script>
 
     <script defer type="module" src="/assets/js/headerUse.js"></script>
+    <script defer type="module" src="/assets/js/order.js"></script>
     <title>THE GOLF</title>
   </head>
   <body>
-    <header class="header">
-      <nav class="" role="navigation" aria-label="main navigation">
-        <div class="container">
-          <div class="search">
-            <input type="text" placeholder="Search..." />
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </div>
-
-          <div class="mainLogo">
-            <img src="/assets/img/pageLogo2 (1).png" />
-          </div>
-
-          <div class="menuOnTopright">
-            <ul class="headerMenu" id="#">
-              <li id="login"><a href="/login.html">로그인</a></li>
-              <!-- <li id="logout" class="hidden"><a href="/">로그아웃</a></li> -->
-              <li id="adminPage" class="hidden">
-                <!-- <a href="/admin">관리자 페이지</a> -->
-              </li>
-              <li id="edit" class="hidden">
-                <!-- <a href="/edit">회원정보수정</a> -->
-              </li>
-              <li id="seeOrder" class="hidden">
-                <!-- <a href="/changeOrder">주문정보조회</a> -->
-              </li>
-
-              <li id="register">
-                <a href="/register.html">
-                  <i class="fa-solid fa-user-plus"></i>회원가입
-                </a>
-              </li>
-              <li>
-                <a href="/cart.html" aria-current="page">
-                  <i class="fa-solid fa-bag-shopping"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="main-category">
-          <div class="category-item">HOME</div>
-          <div class="separator"></div>
-          <div class="category-item">BRAND</div>
-          <div class="category-item">MEN</div>
-          <div class="category-item">WOMEN</div>
-          <div class="category-item">SHOES</div>
-          <div class="category-item">BAG</div>
-          <div class="category-item">ACC</div>
-        </div>
-      </nav>
-    </header>
     <!-- 주문서 작성 -->
     <div class="wrapper is-flex mt-5">
       <div class="content">
@@ -117,27 +67,6 @@
             <div class="field-label is-normal">
               <label class="label" for="address2">주소</label>
             </div>
-            <div class="field-body search">
-              <div class="field">
-                <p class="control">
-                  <input
-                    class="input"
-                    id="postalCode"
-                    type="text"
-                    placeholder="주소찾기를 클릭해 주세요."
-                    readonly
-                  />
-                </p>
-              </div>
-              <div>
-                <button
-                  class="button is-light is-hovered"
-                  id="searchAddressButton"
-                >
-                  주소찾기
-                </button>
-              </div>
-            </div>
           </div>
 
           <div class="field is-horizontal">
@@ -147,11 +76,10 @@
                 <p class="control">
                   <input
                     class="input"
-                    id="address1"
+                    id="address"
                     type="text"
-                    placeholder=""
+                    placeholder="주소를 입력해주세요"
                     autocomplete="on"
-                    readonly
                   />
                 </p>
               </div>
@@ -220,18 +148,15 @@
       </div>
       <aside class="aside-order">
         <section class="price">
-          <div class=box product">
+          <div class=box product>
           <p class="strong mb-4"><strong>결제정보</strong></p>
           <div class="box total">
             <dl>
               <dt class="strong"><strong>상품수</strong></dt>
-              <dd id="product-count">0개</dd>
-              <dt><strong>총 상품금액</strong></dt>
-              <dd id="product-total">0원</dd>
-              <dt><strong>배송비</strong></dt>
-              <dd id="delivery-price">0원</dd>
+              <dd id="ordercount"></dd>
+
               <dt><strong>총 결제금액</strong></dt>
-              <dd id="total-price">0원</dd>
+              <dd id="totalAmount">0원</dd>
             </dl>
           </div>
         </section>

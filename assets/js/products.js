@@ -1,9 +1,9 @@
-import { API_URL, getAPI } from './common.js';
+import { API_URL, getAPI } from "./common.js";
 
 export async function getProducts() {
   try {
     const data = await getAPI(`${API_URL}/products`, {
-      method: 'GET',
+      method: "GET",
     });
     productsTbody(data.products);
   } catch (e) {
@@ -14,7 +14,7 @@ export async function getProducts() {
 async function deleteProduct(_id) {
   try {
     await getAPI(`${API_URL}/products/${_id}`, {
-      method: 'DELETE',
+      method: "DELETE",
     });
     getProducts();
   } catch (e) {
@@ -22,15 +22,41 @@ async function deleteProduct(_id) {
   }
 }
 
-function productsTbody(products) {
-  const productList = document.querySelector('#product-list');
-  productList.innerHTML = '';
+async function getCategoryNameById(_id) {
+  try {
+    const category = await getAPI(`${API_URL}/category/${_id}`, {
+      method: "GET",
+    });
+    return category.category.categoryName;
+  } catch (e) {
+    alert(e);
+  }
+}
+
+async function getparentCategoryIdById(_id) {
+  try {
+    const category = await getAPI(`${API_URL}/category/${_id}`, {
+      method: "GET",
+    });
+    return category.category.parentCategoryId;
+  } catch (e) {
+    alert(e);
+  }
+}
+
+async function productsTbody(products) {
+  const productList = document.querySelector("#product-list");
+  productList.innerHTML = "";
   for (let i = 0; i < products.length; i++) {
-    const item = document.createElement('tr');
+    const item = document.createElement("tr");
     const { category, name, price, stock, _id } = products[i];
+    const categoryName = await getCategoryNameById(category);
+    const parentCategoryId = await getparentCategoryIdById(category);
+    const parentCategoryName = await getCategoryNameById(parentCategoryId);
+    console.log(categoryName);
     item.innerHTML = `<tr>
        <td>${i + 1}</td>
-       <td>${category}</td>
+       <td>${parentCategoryName} - ${categoryName}</td>
        <td>${name}</td>
        <td>${price}</td>
        <td>${stock}</td>
@@ -45,8 +71,8 @@ function productsTbody(products) {
      </tr>`;
     productList.appendChild(item);
 
-    const deleteBtn = item.querySelector('#delete-btn');
-    deleteBtn.addEventListener('click', function (event) {
+    const deleteBtn = item.querySelector("#delete-btn");
+    deleteBtn.addEventListener("click", function (event) {
       deleteProduct(event.currentTarget.value);
     });
   }

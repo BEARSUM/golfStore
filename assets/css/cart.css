@@ -51,3 +51,30 @@
   background-color: #1f1f1f !important; /* Red */
   color: white;
 }
+
+.delete-all-button {
+  position: absolute;
+  top: 220px; /* 원하는 위치로 조정하세요 */
+  right: 685px;
+  float: right;
+}
+.product-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0ea75c;
+}
+
+.product-container {
+  margin-top: 30px;
+}
+.add,
+.remove {
+  background-color: #0ea75c; /* 배경색 */
+  color: white; /* 글자색 */
+  padding: 8px 16px; /* 안쪽 여백 */
+  font-size: 14px; /* 글자 크기 */
+  border: none; /* 테두리 없음 */
+  border-radius: 4px; /* 테두리 둥글게 */
+  cursor: pointer; /* 커서 타입 */
+  margin-right: 5px; /* 오른쪽 마진 */
+}

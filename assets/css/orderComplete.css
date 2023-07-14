@@ -3,16 +3,16 @@
 
 .wrapper {
   width: 100%;
-  padding: 0 15px;
-  /* max-width: 960px; */
-  margin: 0 auto;
+  height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .delivery-info {
   width: 570px;
 }
 .aside-order {
+  position: relative;
   margin-top: 65px;
   width: 370px;
   margin-left: 130px;
@@ -21,4 +21,7 @@
 }
 .aside-order .price .box {
   background-color: #fafafa;
+}
+.box {
+  margin-top: 30px;
 }

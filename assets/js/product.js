@@ -4,6 +4,9 @@ const categoryListUrl = `${URI}/category`;
 
 //header에서 클릭한 부모카테고리
 const parentCategoryId = new URLSearchParams(window.location.search).get("c");
+//카테고리-부모
+const parentCategory = document.querySelector(".parent-category");
+
 //카테고리-자식
 const childCategory = document.querySelector(".product-category");
 
@@ -18,6 +21,9 @@ async function getChildCategory() {
 
     //클릭한 부모카테고리와 같은 부모카테고리를 가진 자식카테고리 찾기
     categories.forEach((el) => {
+      if (el._id === parentCategoryId) {
+        parentCategory.innerText = el.categoryName;
+      }
       if (el.parentCategoryId === parentCategoryId) {
         console.log(el.categoryName);
 
@@ -28,11 +34,16 @@ async function getChildCategory() {
         childCategory.appendChild(categoryEl);
       }
     });
+
     //페이지 진입시 상품정보 불러오기
     const firstChildCategory = categories
       .filter((el) => el.parentCategoryId === parentCategoryId)
       .at(0);
     if (firstChildCategory) {
+      console.log("색깔바꾸기", childCategory);
+      const firstChild = childCategory.querySelector("div:nth-child(1)");
+      firstChild.style.color = "var(--green)";
+      firstChild.style.fontWeight = 400;
       itemList.innerHTML = "";
       getProducts(firstChildCategory._id);
     }
@@ -121,4 +132,18 @@ childCategory.addEventListener("click", (e) => {
   let categoryId = e.target.dataset.id;
   itemList.innerHTML = "";
   getProducts(categoryId);
+
+  resetCategoryColor();
+  // 클릭한 카테고리만 특별한 스타일로 변경합니다.
+  e.target.style.color = "var(--green)";
+  e.target.style.fontWeight = 400;
 });
+
+//카테고리 색 되돌리기
+function resetCategoryColor() {
+  const categoryDivs = childCategory.querySelectorAll("div");
+  categoryDivs.forEach((div) => {
+    div.style.color = "var(--black)";
+    div.style.fontWeight = 300;
+  });
+}
