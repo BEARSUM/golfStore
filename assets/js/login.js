@@ -1,60 +1,67 @@
-import * as Api from "/api.js";
-import { validateEmail } from "/useful-functions.js";
+const URI = "http://kdt-sw-5-team06.elicecoding.com/users/sign-in";
 
-// 요소(element), input 혹은 상수
-const emailInput = document.querySelector("#emailInput");
+const idInput = document.querySelector("#idInput");
 const passwordInput = document.querySelector("#passwordInput");
-const submitButton = document.querySelector("#submitButton");
+const loginButton = document.querySelector("#loginButton");
+const logoutButton = document.querySelector("#logoutButton");
 
-addAllElements();
-addAllEvents();
+loginButton.addEventListener("click", handleSubmit);
+logoutButton.addEventListener("click", handleLogout);
 
-// html에 요소를 추가하는 함수들을 묶어주어서 코드를 깔끔하게 하는 역할임.
-async function addAllElements() {}
+async function fetchAPI(data) {
+  const response = await fetch(URI, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
 
-// 여러 개의 addEventListener들을 묶어주어서 코드를 깔끔하게 하는 역할임.
-function addAllEvents() {
-  submitButton.addEventListener("click", handleSubmit);
+  if (response.ok) {
+    const responseData = await response.json();
+    const token = responseData.token;
+
+    // 토큰 값을 로컬 스토리지에 저장
+    localStorage.setItem("token", token);
+
+    //alert("로그인에 성공하였습니다!");
+    window.location.href = "/index.html";
+  } else {
+    const errorData = await response.json();
+    throw new Error(errorData.message);
+  }
 }
 
-// 로그인 진행
+function handleLogout(e) {
+  e.preventDefault();
+
+  // 로컬 스토리지에서 토큰을 삭제합니다.
+  localStorage.removeItem("token");
+
+  //alert("로그아웃에 성공하였습니다!");
+  window.location.href = "/index.html"; // 로그아웃 후 이동할 로그인 페이지의 URL을 적어주세요.
+}
+
 async function handleSubmit(e) {
   e.preventDefault();
 
-  const email = emailInput.value;
-  const password = passwordInput.value;
-
-  // 잘 입력했는지 확인
-  const isEmailValid = validateEmail(email);
-  const isPasswordValid = password.length >= 4;
-
-  if (!isEmailValid || !isPasswordValid) {
-    return alert(
-      "비밀번호가 4글자 이상인지, 이메일 형태가 맞는지 확인해 주세요."
-    );
+  if (!idInput.value) {
+    return alert("아이디를 입력해 주세요.");
   }
 
-  // 로그인 api 요청
+  if (!passwordInput.value) {
+    return alert("비밀번호를 입력해 주세요.");
+  }
+
+  const data = {
+    email: idInput.value,
+    password: passwordInput.value,
+  };
+
   try {
-    const data = { email, password };
-
-    const result = await Api.post("/api/users/login", data);
-    const token = result.token;
-
-    console.log(data);
-
-    // 로그인 성공, 토큰을 세션 스토리지에 저장
-    // 물론 다른 스토리지여도 됨
-    sessionStorage.setItem("token", token);
-
-    alert(`정상적으로 로그인되었습니다.`);
-
-    // 로그인 성공
-
-    // 기본 페이지로 이동
-    window.location.href = "/";
-  } catch (err) {
-    console.error(err.stack);
-    alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
+    await fetchAPI(data);
+  } catch (error) {
+    alert("로그인에 실패하였습니다. " + error.message);
+    console.error(error);
   }
 }

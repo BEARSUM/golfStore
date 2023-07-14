@@ -63,14 +63,16 @@
 }
 
 .category-menu1,
-.category-menu2 {
+.category-menu2,
+.category-menu3 {
   font-size: 20px;
   color: var(--gray);
   margin-top: 10px;
   text-decoration: none;
 }
 
-.category-menu1 {
+.category-menu1,
+.category-menu2 {
   margin-right: 30px;
 }
 

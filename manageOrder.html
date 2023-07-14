@@ -7,8 +7,11 @@
     <link href="assets/css/manageOrder.css" rel="stylesheet" />
     <link href="assets/css/manage.css" rel="stylesheet" />
 
+    <script defer src="/assets/js/manageorder.js" type="module"></script>
     <script defer src="/assets/js/admin.js"></script>
     <script src="https://kit.fontawesome.com/6d5788fdc0.js"></script>
+    <script defer type="module" src="/assets/js/headerUse.js"></script>
+    <link href="assets/css/headerFooter.css" rel="stylesheet" />
   </head>
   <body>
     <!-- header -->
@@ -43,51 +46,14 @@
           <table class="admin-list-table">
             <thead>
               <tr>
-                <th width="300">주문번호</th>
+                <th width="300">번호</th>
                 <th width="400">주문자이름</th>
                 <th width="300">주문총액</th>
                 <th width="300">상태관리</th>
                 <th width="200">삭제</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>3298512589230490</td>
-                <td>홍길동</td>
-                <td>10000</td>
-                <td>
-                  <div>
-                    <select>
-                      <option value="pending">배송준비중</option>
-                      <option value="shipping">배송중</option>
-                      <option value="shipped">배송완료</option>
-                      <option value="canceled">주문취소</option>
-                    </select>
-                  </div>
-                </td>
-                <td>
-                  <button class="delete-button">주문 삭제</button>
-                </td>
-              </tr>
-              <tr>
-                <td>3298512589230490</td>
-                <td>홍길동</td>
-                <td>10000</td>
-                <td>
-                  <div>
-                    <select>
-                      <option value="pending">배송준비중</option>
-                      <option value="shipping">배송중</option>
-                      <option value="shipped">배송완료</option>
-                      <option value="canceled">주문취소</option>
-                    </select>
-                  </div>
-                </td>
-                <td>
-                  <button class="button">주문 삭제</button>
-                </td>
-              </tr>
-            </tbody>
+            <tbody id="orderList"></tbody>
           </table>
         </div>
       </div>

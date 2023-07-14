@@ -20,25 +20,6 @@ export async function deleteCategory(_id) {
     alert(e);
   }
 }
-export async function changeCategory() {
-  try {
-    await getAPI(`${API_URL}/category/${_id}`, {
-      method: 'PUT',
-    });
-    changeCategoryList();
-  } catch (e) {
-    alert(e);
-  }
-}
-
-function changeCategoryList() {
-  const categoryList = document.querySelecto('#category-list');
-  categoryList.innerHTML = '';
-  const changeBtn = item.querySelector('.change-btn');
-  changeBtn.addEventListener('click', function (event) {
-    changeCategory(event.currentTarget.value);
-  });
-}
 
 function categoriesTbody(categories) {
   const categoryList = document.querySelector('#category-list');
@@ -52,12 +33,12 @@ function categoriesTbody(categories) {
                 <td>${categoryName}</td>
                 <td>
                   <div>
-                    <button value="${_id}" class="change-btn">수정</button>
+                    <button onclick="location.href='../categoryChange.html'" class="change-btn">수정</button>
                   </div>
                 </td>
                 <td>
                   <div>
-                     <button value="${_id}" class="delete-btn">삭제</button>
+                     <button value="${_id}"  class="delete-btn">삭제</button>
                   </div>
                 </td>
               </tr>`;

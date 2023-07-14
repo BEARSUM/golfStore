@@ -4,11 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bulma css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link href="assets/css/headerFooter.css" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/myOrder.css" />
 
-    <script defer src="/assets/js/myOrder.js"></script>
     <script src="https://kit.fontawesome.com/6d5788fdc0.js"></script>
-
+    <script defer src="/assets/js/myOrder.js"></script>
+    <script defer type="module" src="/assets/js/headerUse.js"></script>
+    <script defer type="module" src="/assets/js/footerUse.js"></script>
     <title>THE GOLF</title>
   </head>
 
@@ -70,12 +77,10 @@
                 <div class="item-info">
                   <div class="item-brand">브랜드명</div>
                   <div class="item-name">상품명</div>
-                  <div class="item-option">옵션 : 상품옵션<!--js--></div>
+                  <div class="item-option">옵션 : 상품옵션</div>
                   <div class="item-price-quantity">
-                    <div class="item-price">
-                      <strong>0000<!--js--></strong>원
-                    </div>
-                    <div class="item-quantity">/1<!--js-->개</div>
+                    <div class="item-price"><strong>0000</strong>원</div>
+                    <div class="item-quantity">/1개</div>
                   </div>
                   <div class="item-status-cancel">
                     <div class="order-status">배송완료</div>

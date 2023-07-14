@@ -1,5 +1,5 @@
-@import "../../public/css/reset.css";
-@import "../../public/css/variables.css";
+@import "/assets/css/reset.css";
+@import "/assets/css/variables.css";
 
 .header nav {
   clear: both;
@@ -105,7 +105,7 @@
 }
 
 .loginBtn button:first-child {
-  width: 420px;
+  width: 440px;
   height: 56px;
   line-height: 56px;
   font-size: 18px;

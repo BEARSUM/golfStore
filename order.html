@@ -1,0 +1,249 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bulma css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/assets/css/headerFooter.css" />
+    <link rel="stylesheet" href="/assets/css/cart.css" />
+    <script src="/assets/js/order.js" type="module" defer></script>
+    <script src="https://kit.fontawesome.com/667a5e19a9.js"></script>
+
+    <script defer type="module" src="/assets/js/headerUse.js"></script>
+    <title>THE GOLF</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="" role="navigation" aria-label="main navigation">
+        <div class="container">
+          <div class="search">
+            <input type="text" placeholder="Search..." />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+
+          <div class="mainLogo">
+            <img src="/assets/img/pageLogo2 (1).png" />
+          </div>
+
+          <div class="menuOnTopright">
+            <ul class="headerMenu" id="#">
+              <li id="login"><a href="/login.html">로그인</a></li>
+              <!-- <li id="logout" class="hidden"><a href="/">로그아웃</a></li> -->
+              <li id="adminPage" class="hidden">
+                <!-- <a href="/admin">관리자 페이지</a> -->
+              </li>
+              <li id="edit" class="hidden">
+                <!-- <a href="/edit">회원정보수정</a> -->
+              </li>
+              <li id="seeOrder" class="hidden">
+                <!-- <a href="/changeOrder">주문정보조회</a> -->
+              </li>
+
+              <li id="register">
+                <a href="/register.html">
+                  <i class="fa-solid fa-user-plus"></i>회원가입
+                </a>
+              </li>
+              <li>
+                <a href="/cart.html" aria-current="page">
+                  <i class="fa-solid fa-bag-shopping"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="main-category">
+          <div class="category-item">HOME</div>
+          <div class="separator"></div>
+          <div class="category-item">BRAND</div>
+          <div class="category-item">MEN</div>
+          <div class="category-item">WOMEN</div>
+          <div class="category-item">SHOES</div>
+          <div class="category-item">BAG</div>
+          <div class="category-item">ACC</div>
+        </div>
+      </nav>
+    </header>
+    <!-- 주문서 작성 -->
+    <div class="wrapper is-flex mt-5">
+      <div class="content">
+        <section><h2 class="title is-3 mt-3">주문서 작성</h2></section>
+        <section class="box delivery-info">
+          <!-- 배송 정보 -->
+          <p class="subtitle is-4">배송지정보</p>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label" for="receiverName">이름</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input
+                    class="input"
+                    id="receiverName"
+                    type="text"
+                    placeholder="받는 분 이름을 입력해 주세요."
+                    autocomplete="on"
+                  />
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label" for="receiverPhoneNumber">연락처</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input
+                    class="input"
+                    id="receiverPhoneNumber"
+                    type="number"
+                    placeholder="- 없이 입력해 주세요."
+                    autocomplete="on"
+                  />
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label" for="address2">주소</label>
+            </div>
+            <div class="field-body search">
+              <div class="field">
+                <p class="control">
+                  <input
+                    class="input"
+                    id="postalCode"
+                    type="text"
+                    placeholder="주소찾기를 클릭해 주세요."
+                    readonly
+                  />
+                </p>
+              </div>
+              <div>
+                <button
+                  class="button is-light is-hovered"
+                  id="searchAddressButton"
+                >
+                  주소찾기
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal no-label"></div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input
+                    class="input"
+                    id="address1"
+                    type="text"
+                    placeholder=""
+                    autocomplete="on"
+                    readonly
+                  />
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal no-label"></div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input
+                    class="input"
+                    id="address2"
+                    type="text"
+                    placeholder=""
+                    autocomplete="on"
+                  />
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label" for="requestSelectBox">요청사항</label>
+            </div>
+            <div class="field-body">
+              <div class="select">
+                <select id="requestSelectBox">
+                  <option value="배송시 요청사항을 선택해 주세요.">
+                    배송시 요청사항을 선택해 주세요.
+                  </option>
+                  <option value="직접 수령하겠습니다." class="select-option">
+                    직접 수령하겠습니다.
+                  </option>
+                  <option value="배송 전 연락바랍니다." class="select-option">
+                    배송 전 연락바랍니다.
+                  </option>
+                  <option
+                    value="부재 시 경비실에 맡겨주세요."
+                    class="select-option"
+                  >
+                    부재 시 경비실에 맡겨주세요.
+                  </option>
+                  <option
+                    value="부재 시 문 앞에 놓아주세요."
+                    class="select-option"
+                  >
+                    부재 시 문 앞에 놓아주세요.
+                  </option>
+                  <option
+                    value="부재 시 택배함에 넣어주세요."
+                    class="select-option"
+                  >
+                    부재 시 택배함에 넣어주세요.
+                  </option>
+                  <option value="직접 입력" class="select-option">
+                    직접 입력
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <aside class="aside-order">
+        <section class="price">
+          <div class=box product">
+          <p class="strong mb-4"><strong>결제정보</strong></p>
+          <div class="box total">
+            <dl>
+              <dt class="strong"><strong>상품수</strong></dt>
+              <dd id="product-count">0개</dd>
+              <dt><strong>총 상품금액</strong></dt>
+              <dd id="product-total">0원</dd>
+              <dt><strong>배송비</strong></dt>
+              <dd id="delivery-price">0원</dd>
+              <dt><strong>총 결제금액</strong></dt>
+              <dd id="total-price">0원</dd>
+            </dl>
+          </div>
+        </section>
+        <section class="mt-4">
+          <a
+            class="button is-success is-fullwidth is-outlined myButton"
+            id="orderButton"
+          >
+            <strong>결제하기</strong>
+          </a>
+        </section>
+      </aside>
+    </div>
+  </body>
+</html>

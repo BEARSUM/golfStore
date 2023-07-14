@@ -8,7 +8,10 @@
     <link href="assets/css/manage.css" rel="stylesheet" />
 
     <script defer src="/assets/js/admin.js"></script>
+    <script defer src="assets/js/member.js" type="module"></script>
     <script src="https://kit.fontawesome.com/6d5788fdc0.js"></script>
+    <script defer type="module" src="/assets/js/headerUse.js"></script>
+    <link href="assets/css/headerFooter.css" rel="stylesheet" />
   </head>
   <body>
     <!-- header -->
@@ -43,26 +46,13 @@
           <table class="admin-list-table">
             <thead>
               <tr>
-                <th width="300">가입날짜</th>
+                <th width="300">생년월일</th>
                 <th width="400">이메일</th>
                 <th width="300">이름</th>
                 <th width="300">전화번호</th>
               </tr>
             </thead>
-            <tbody>
-              <tr class="userList">
-                <td>2023-02-11</td>
-                <td>dfef@email.com</td>
-                <td>홍길동</td>
-                <td>01012345678</td>
-              </tr>
-              <tr class="userList">
-                <td>2022-10-09</td>
-                <td>skl@email.com</td>
-                <td>홍길동</td>
-                <td>01029338485</td>
-              </tr>
-            </tbody>
+            <tbody id="userList"></tbody>
           </table>
         </div>
       </div>

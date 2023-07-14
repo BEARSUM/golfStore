@@ -1,0 +1,52 @@
+async function getUserData(token) {
+  try {
+    const response = await fetch(
+      `http://kdt-sw-5-team06.elicecoding.com/users/token/${token}`
+    );
+    return await response.json();
+  } catch (err) {
+    console.log(err);
+    return null; // If there is an error, return null
+  }
+}
+
+async function updateHeaderMenu() {
+  const login = document.querySelector('#login');
+  const logout = document.querySelector('#logout');
+  const adminPage = document.querySelector('#adminPage');
+  const edit = document.querySelector('#edit');
+  const seeOrder = document.querySelector('#seeOrder');
+  const register = document.querySelector('#register');
+
+  const token = localStorage.getItem('token');
+  const userData = await getUserData(token);
+
+  console.log(userData);
+
+  if (userData) {
+    if (userData.isAdmin) {
+      logout.classList.remove('hidden');
+      adminPage.classList.remove('hidden');
+      edit.classList.remove('hidden');
+      seeOrder.classList.remove('hidden');
+      login.classList.add('hidden');
+      register.classList.add('hidden');
+    } else {
+      logout.classList.remove('hidden');
+      edit.classList.remove('hidden');
+      seeOrder.classList.remove('hidden');
+      adminPage.classList.add('hidden');
+      login.classList.add('hidden');
+      register.classList.add('hidden');
+    }
+  } else {
+    logout.classList.add('hidden');
+    adminPage.classList.add('hidden');
+    edit.classList.add('hidden');
+    seeOrder.classList.add('hidden');
+    login.classList.remove('hidden');
+    register.classList.remove('hidden');
+  }
+}
+
+export { updateHeaderMenu, getUserData };

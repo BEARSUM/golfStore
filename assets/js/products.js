@@ -1,5 +1,5 @@
 import { API_URL, getAPI } from './common.js';
-getProducts();
+
 export async function getProducts() {
   try {
     const data = await getAPI(`${API_URL}/products`, {
@@ -35,7 +35,7 @@ function productsTbody(products) {
        <td>${price}</td>
        <td>${stock}</td>
        <td>
-         <button value="${_id}' id="delete-btn">삭제</button>
+         <button value="${_id}" id="delete-btn">삭제</button>
        </td>
        <td>
          <button class="change-button" id="product-change">
@@ -51,3 +51,4 @@ function productsTbody(products) {
     });
   }
 }
+getProducts();
