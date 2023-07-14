@@ -30,6 +30,8 @@ window.addEventListener("DOMContentLoaded", async (event) => {
     // 주문 정보 객체를 JSON 형식으로 변환함
     const orderListJson = JSON.stringify(orderList);
 
+    console.log(orderList);
+
     // 주문 정보를 로컬 스토리지에 저장함
     localStorage.setItem("order-list", orderListJson);
 
@@ -47,21 +49,76 @@ window.addEventListener("DOMContentLoaded", async (event) => {
     const receiverPhoneNumber = document.getElementById(
       "receiverPhoneNumber"
     ).value;
-    const address2 = document.getElementById("address2").value;
+    const address = document.getElementById("address").value;
+    const detailAddress = document.getElementById("address2").value;
     const requestSelectBox = document.getElementById("requestSelectBox").value;
 
     // Validation: 각 필드가 비어있는지 확인
-    if (!(receiverName && receiverPhoneNumber && address2)) {
+    if (!(receiverName && receiverPhoneNumber && address && detailAddress)) {
       alert("모든 필드를 채워주세요.");
       return;
     }
 
-    // TODO: 결제 처리 코드를 여기에 작성
+    // 토큰 가져오기
+    const token = localStorage.getItem("token");
 
-    // 결제가 성공적으로 처리된 후, 장바구니 비우기
-    localStorage.removeItem("cart-list");
+    // 사용자 정보를 가져오기 위한 요청
+    const userResponse = await fetch(
+      `http://kdt-sw-5-team06.elicecoding.com:3000/users/token/${token}`
+    );
+    const userData = await userResponse.json();
 
-    // 주문 완료 페이지로 리다이렉트
-    window.location.href = "/orderComplete.html";
+    // 사용자 ID 가져오기
+    const userId = userData._id;
+
+    console.log(userId);
+
+    // 주문(상품) 정보를 가져옴
+    const orderListJson = localStorage.getItem("order-list");
+    const orderList = JSON.parse(orderListJson);
+
+    // 주문 정보에 추가할 주소 정보
+    const shippingAddress = {
+      streetAddress: address,
+      detailAddress: detailAddress,
+    };
+
+    const requestJSON = {
+      products: orderList,
+      address: shippingAddress,
+    };
+
+    console.log(requestJSON);
+
+    // 주문 정보에 주소 정보 추가
+
+    // 주문 정보를 서버로 전송
+    const response = await fetch(
+      "http://kdt-sw-5-team06.elicecoding.com:3000/order",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userId: userId,
+          products: orderList,
+          totalAmount: orderList.reduce((acc, curr) => acc + curr.subtotal, 0),
+          address: shippingAddress,
+        }),
+      }
+    );
+
+    // 서버 응답 확인
+    if (response.ok) {
+      // 결제가 성공적으로 처리된 후, 장바구니 비우기
+      localStorage.removeItem("cart-list");
+
+      // 주문 완료 페이지로 리다이렉트
+      window.location.href = "/orderComplete.html";
+    } else {
+      // 결제 실패 처리
+      alert("결제에 실패했습니다. 다시 시도해주세요.");
+    }
   });
 });
