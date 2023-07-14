@@ -1,5 +1,5 @@
-@import "../../public/css/reset.css";
-@import "../../public/css/variables.css";
+@import "/assets/css/reset.css";
+@import "/assets/css/variables.css";
 
 .register-user-form-container {
   line-height: 32px;
@@ -13,7 +13,7 @@
 
 .register-user-form-box {
   width: 30rem;
-  height: 46rem;
+  height: 57rem;
 }
 
 .register-user-form-box .title {
@@ -30,7 +30,7 @@
 }
 
 .welcomeBtn button:first-child {
-  width: 420px;
+  width: 440px;
   height: 56px;
   line-height: 56px;
   font-size: 18px;

@@ -1,9 +1,9 @@
-@import "../../public/css/reset.css";
-@import "../../public/css/variables.css";
+@import "/assets/css/reset.css";
+@import "/assets/css/variables.css";
 
 .header nav {
   clear: both;
-  margin: 0px auto;
+  margin-top: 30px;
   min-height: 144px;
   top: 0px;
   background-color: rgb(255, 255, 255);
@@ -15,17 +15,52 @@
 .main-category {
   margin-top: 30px;
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
-  align-items: stretch; /* .main-category의 자식 요소들의 높이를 늘려 전체 구분선을 표시합니다. */
+  align-items: stretch;
 }
+
+.main-category .category-item .sub-categories {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.category-item:hover .sub-categories {
+  display: block;
+}
+
 .category-item {
-  font-size: 24px; /* 글꼴 크기 설정 */
+  font-size: 24px;
+  position: relative;
 }
+.category-item a {
+  color: black;
+}
+
+.sub-categories {
+  color: black;
+}
+
 .separator {
-  width: 1px;
+  width: 2px;
   background-color: gray;
-  margin: 0 10px;
+  margin-left: 0px;
+}
+
+.headerMenu {
+  overflow: hidden;
+}
+
+.headerMenu li {
+  flex: 1;
+  white-space: nowrap;
+}
+
+.headerMenu li {
+  margin-right: 3px;
 }
 
 .container {
@@ -34,29 +69,39 @@
   align-items: center;
   padding: 0 15px;
 }
+
 .search {
   display: flex;
   justify-content: flex-start;
   flex-grow: 1;
 }
+
 .search input {
   border: none;
   outline: none;
 }
 
 .search i {
-  margin-left: 5px; /* 돋보기 아이콘과 입력란 사이의 간격을 조정합니다 */
+  margin-left: 5px;
+}
+a.beginner {
+  /* Add your desired styles here */
+  font-size: 24px;
+  color: black;
+  position: absolute;
+  top: 60px; /* 원하는 위치로 조정하세요 */
+  right: 10px;
+  float: right;
 }
 
-.header .menuOnTopright .headerMenu li a {
-  color: black;
+.header .menuOnTopright .headerMenu a {
+  color: black !important;
   opacity: 60%;
   font-weight: 500;
   margin-left: 15px;
 }
-
-.header .menuOnTopright .headerMenu li a:hover {
-  color: #bd3651;
+.header .menuOnTopright .headerMenu a:hover {
+  color: black !important;
   opacity: 60%;
   font-weight: 500;
   margin-left: 15px;
@@ -69,17 +114,26 @@
 
 .mainLogo {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   flex-direction: row-reverse;
-  max-width: 200px; /* 좌우로 늘리고자 하는 너비 값으로 조정해주세요 */
-  max-height: 150px;
+  max-width: 20%;
+  max-height: 20%;
+}
+
+.mainLogo img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .menuOnTopright {
   display: flex;
   justify-content: flex-end;
   flex-grow: 1;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .footerbody {
@@ -90,7 +144,13 @@
   margin-left: 5.5rem;
   display: flex;
   flex-direction: column;
-  font-size: small;
+}
+
+/* 구분선 스타일 */
+.footer-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
 }
 
 .footerCompany {
@@ -130,4 +190,9 @@
 
 .finalFooter {
   margin-bottom: 3rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }

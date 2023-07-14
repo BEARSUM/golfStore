@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="assets/css/manageOrder.css" rel="stylesheet" />
+    <link href="assets/css/manage.css" rel="stylesheet" />
 
+    <script defer src="/assets/js/manageorder.js" type="module"></script>
     <script defer src="/assets/js/admin.js"></script>
     <script src="https://kit.fontawesome.com/6d5788fdc0.js"></script>
+    <script defer type="module" src="/assets/js/headerUse.js"></script>
+    <link href="assets/css/headerFooter.css" rel="stylesheet" />
   </head>
   <body>
-    <!-- header -->
-    <div class="header">header</div>
-
     <div class="home-container">
       <!--공통된 component:my-category-->
       <div class="admin-category">
@@ -20,35 +21,40 @@
 
         <div class="admin-category-list">
           <!-- js로 추후 구현 -->
-          <a href="/manageOrder.html">주문관리</a>
-          <a href="/manageMember.html">회원관리</a>
-          <!-- 추후구현 <a href="">관심상품</a>
-          <a href="">리뷰</a> -->
-          <a href="/addCategory.html">카테고리 추가</a>
-          <a href="/addProduct.html">제품 추가</a>
+          <a href="/manageOrder.html" id="orderLink">주문관리</a>
+          <a href="/manageMember.html" id="memberLink">회원관리</a>
+          <a href="/manageAdmin.html" id="adminLink">관리자관리</a>
+          <a href="/categoryList.html" id="categoryLink">카테고리 관리</a>
+          <a href="/productList.html" id="productLink">상품 관리</a>
           <div class="horizontal-bar"></div>
         </div>
       </div>
 
-      <div class="home-main">
-        <div class="home-admin-info">
-          <div class="manage">
-            <div class="title">주문 관리</div>
-            <div class="title-explain">
-              회원들의 주문내역을 확인, 취소할 수 있습니다.
-            </div>
+      <div class="home-admin-info">
+        <div class="manage-order">
+          <div class="order-title">주문 관리</div>
+          <div class="ordertitle-explain">
+            회원들의 주문내역을 확인, 취소할 수 있습니다.
           </div>
         </div>
 
         <!-- <div class="main-horizontal-bar"></div> -->
 
-        <div class="recent-order">
-          <div class="main-horizontal-bar"></div>
+        <div class="order-section">
+          <table class="order-table">
+            <thead>
+              <tr>
+                <th width="300">번호</th>
+                <th width="400">주문자이름</th>
+                <th width="300">주문총액</th>
+                <th width="300">상태관리</th>
+                <th width="200">삭제</th>
+              </tr>
+            </thead>
+            <tbody id="orderList"></tbody>
+          </table>
         </div>
       </div>
     </div>
-
-    <!-- footer -->
-    <footer>footer</footer>
   </body>
 </html>

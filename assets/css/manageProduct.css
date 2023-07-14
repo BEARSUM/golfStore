@@ -1,0 +1,154 @@
+@import '/assets/css/reset.css';
+@import '/assets/css/variables.css';
+
+* {
+  box-sizing: border-box;
+  /* outline: 1px solid #4f80ff; */
+}
+
+.home-container {
+  display: flex;
+  flex-flow: row;
+
+  margin: 5% 8%;
+}
+.admin-category {
+  display: flex;
+  flex-flow: column;
+}
+.admin-category {
+  width: 20%;
+  margin-right: 10px;
+}
+
+.admin-title {
+  margin-bottom: 44px;
+
+  font-size: 28px;
+  font-weight: 300;
+}
+.admin-category-list {
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+
+  font-weight: 400;
+}
+.admin-category-list > a {
+  text-decoration: none;
+  color: var(--gray);
+
+  cursor: pointer;
+}
+.admin-category-list a.highlight {
+  color: green;
+  font-weight: bold;
+}
+.horizontal-bar {
+  margin-top: 80px;
+  width: 70%;
+  height: 1px;
+
+  background-color: var(--black);
+}
+.manage-category {
+  margin-bottom: 20px;
+}
+.product-title {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.producttitle-explain {
+  margin-bottom: 30px;
+}
+.product-category {
+  margin-bottom: 20px;
+}
+.product-menu1,
+.product-menu2 {
+  font-size: 20px;
+  color: var(--gray);
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.product-menu1 {
+  margin-right: 30px;
+}
+.product-section {
+  text-align: center;
+  margin: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: 200px; /* 각 셀의 너비를 25%로 설정 */
+}
+
+.product-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.product-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+/* .product-table {
+  width: 900px;
+  text-align: center;
+}
+thead {
+  font-weight: bold;
+}
+th {
+  border: 1px solid #444444;
+  padding: 15px;
+}
+td {
+  border: 1px solid #444444;
+  padding: 10px;
+} */
+.label {
+  font-weight: bold;
+}
+.field {
+  margin-bottom: 10px;
+}
+.control {
+  margin-top: 10px;
+}
+.input {
+  height: 40px;
+  width: 800px;
+}
+#select-box {
+  height: 40px;
+  width: 800px;
+}
+#product-description {
+  height: 100px;
+  width: 800px;
+}
+#btn-submit {
+  background-color: lightblue;
+  height: 40px;
+  width: 80px;
+  margin-right: 10px;
+}
+#btn-cancel {
+  height: 40px;
+  width: 80px;
+}
+#btn-delete {
+  height: 40px;
+  width: 80px;
+}
+.product-control {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

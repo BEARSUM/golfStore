@@ -88,7 +88,7 @@ body {
   background-color: var(--lightGray);
   margin: 30px 0;
 }
-#sale-option {
+#size-option {
   -webkit-appearance: none; /*for chrome*/
   -o-appearence: none;
   -moz-appearance: none;
@@ -102,7 +102,7 @@ body {
   padding: 16px 15px;
   cursor: pointer;
 }
-#sale-option:focus {
+#size-option:focus {
   outline: none;
 }
 .item-quantity {
@@ -115,13 +115,18 @@ body {
 .q-decrease,
 .q-increase {
   width: 33px;
+  padding-bottom: 5px;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
   border: solid 1px var(--lightGray);
+  background-color: transparent;
+
   font-size: 32px;
   font-weight: 200;
+  color: var(--black);
 
   cursor: pointer;
 }
@@ -157,6 +162,7 @@ body {
   width: 42%;
   cursor: pointer;
   border: solid 1px var(--green);
+  background-color: transparent;
   color: var(--green);
 }
 .option-purchase {
@@ -165,6 +171,7 @@ body {
   align-items: center;
   width: 42%;
   cursor: pointer;
+  border: solid 1px var(--green);
   background-color: var(--green);
   color: white;
 }

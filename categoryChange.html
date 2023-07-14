@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/css/manageCategory.css" rel="stylesheet" />
+
+    <script defer src="assets/js/categoryAdd.js" type="module"></script>
+
+    <script defer src="assets/js/admin.js"></script>
+    <script src="https://kit.fontawesome.com/6d5788fdc0.js"></script>
+    <script defer type="module" src="/assets/js/headerUse.js"></script>
+    <link href="assets/css/headerFooter.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="home-container">
+      <!--공통된 component:my-category-->
+      <div class="admin-category">
+        <div class="admin-title">관리자<!--js--></div>
+
+        <div class="admin-category-list">
+          <!-- js로 추후 구현 -->
+          <a href="/manageOrder.html" id="orderLink">주문관리</a>
+          <a href="/manageMember.html" id="memberLink">회원관리</a>
+          <a href="/manageAdmin.html" id="adminLink">관리자관리</a>
+          <a href="/categoryList.html" id="categoryLink">카테고리 관리</a>
+          <a href="/productList.html" id="productLink">상품 관리</a>
+          <div class="horizontal-bar"></div>
+        </div>
+      </div>
+
+      <div class="home-admin-info">
+        <div class="manage-category">
+          <div class="category-title">카테고리 관리</div>
+          <div class="categorytitle-explain">
+            카테고리를 등록, 수정, 삭제 할 수 있습니다.
+          </div>
+          <div>
+            <a href="categoryList.html" class="category-menu1">카테고리 목록</a>
+            <a href="categoryAdd.html" class="category-menu2">카테고리 등록</a>
+            <a href="categoryChange.html" class="category-menu3"
+              >카테고리 수정</a
+            >
+          </div>
+        </div>
+        <div class="category-form">
+          <div class="container">
+            <!-- form -->
+            <form>
+              <div class="field">
+                <label class="label">이름</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="카테고리 이름을 입력하세요."
+                    id="category-name"
+                  />
+                </div>
+              </div>
+
+              <div class="category-control">
+                <div class="control">
+                  <input
+                    type="submit"
+                    value="수정하기"
+                    class="button-submit"
+                    id="btn-submit"
+                  />
+                </div>
+                <div class="control">
+                  <button class="button-cancel">Cancel</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

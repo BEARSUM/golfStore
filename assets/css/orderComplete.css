@@ -1,0 +1,27 @@
+@import "/assets/css/reset.css";
+@import "/assets/css/variables.css";
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.delivery-info {
+  width: 570px;
+}
+.aside-order {
+  position: relative;
+  margin-top: 65px;
+  width: 370px;
+  margin-left: 130px;
+  margin-bottom: 30px;
+  /* background-color: pink; */
+}
+.aside-order .price .box {
+  background-color: #fafafa;
+}
+.box {
+  margin-top: 30px;
+}

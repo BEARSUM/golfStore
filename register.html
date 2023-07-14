@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>회원가입</title>
     <!-- bulma css 관련 -->
     <link
       rel="stylesheet"
@@ -12,163 +11,125 @@
     <!-- 폰트 어썸: 아이콘 -->
     <link rel="icon" type="image/png" sizes="16x16" href="/pageLogo.png" />
 
-    <!-- 구글 OAuth -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <!-- 카카오 OAuth -->
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <!-- 커스텀 css, js -->
     <link rel="stylesheet" href="/assets/css/register.css" />
     <link rel="stylesheet" href="/assets/css/headerFooter.css" />
-    <script src="register.js" type="module" defer></script>
+    <script defer type="module" src="/assets/js/registerHeaderUse.js"></script>
+    <script src="/assets/js/register.js" defer></script>
+    <title>THE GOLF</title>
   </head>
   <body>
-    <header class="header">
-      <nav class="" role="navigation" aria-label="main navigation">
-        <div class="container">
-          <div class="search">
-            <input type="text" placeholder="Search..." />
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </div>
-
-          <div class="mainLogo">
-            <img src="/assets/img/pageLogo2 (1).png" />
-          </div>
-
-          <div class="menuOnTopright">
-            <ul class="headerMenu" id="#">
-              <li id="login"><a href="/login">로그인</a></li>
-              <!-- <li id="logout" class="hidden"><a href="/">로그아웃</a></li> -->
-              <li id="adminPage" class="hidden">
-                <!-- <a href="/admin">관리자 페이지</a> -->
-              </li>
-              <li id="edit" class="hidden">
-                <!-- <a href="/edit">회원정보수정</a> -->
-              </li>
-              <li id="seeOrder" class="hidden">
-                <a href="/changeOrder">주문정보조회</a>
-              </li>
-
-              <li id="register">
-                <a href="/register">
-                  <i class="fa-solid fa-user-plus"></i>회원가입
-                </a>
-              </li>
-              <li>
-                <a href="/cart" aria-current="page">
-                  <i class="fa-solid fa-bag-shopping"></i>
-                </a>
-              </li>
-            </ul>
+  
+    <div class="register-user-form-container">
+      <form class="box register-user-form-box" id="registerUserForm">
+        <h1 class="welcome">환영합니다!</h1>
+        <div class="field">
+          <label class="label" for="emailInput">이메일</label>
+          <div class="control">
+            <input
+              class="input"
+              id="emailInput"
+              type="email"
+              placeholder="abc@example.com"
+              required
+            />
           </div>
         </div>
-        <div class="main-category">
-          <div class="category-item">HOME</div>
-          <div class="separator"></div>
-          <div class="category-item">BRAND</div>
-          <div class="category-item">MEN</div>
-          <div class="category-item">WOMEN</div>
-          <div class="category-item">SHOES</div>
-          <div class="category-item">BAG</div>
-          <div class="category-item">ACC</div>
+
+        <div class="field">
+          <label class="label" for="passwordInput">비밀번호</label>
+          <div class="control">
+            <input
+              class="input"
+              id="passwordInput"
+              type="password"
+              placeholder="********"
+              required
+            />
+          </div>
         </div>
-      </nav>
-    </header>
-    <!-- 회원가입 폼(Form) -->
-    <main class="main">
-      <div class="register-user-form-container">
-        <form class="box register-user-form-box" id="registerUserForm">
-          <h1 class="welcome">환영합니다!</h1>
-          <div class="field">
-            <label class="label" for="fullNameInput">이름</label>
-            <div class="control">
-              <input
-                class="input"
-                id="fullNameInput"
-                type="text"
-                placeholder="더골프"
-                autocomplete="on"
-              />
-            </div>
-          </div>
 
-          <div class="field">
-            <label class="label" for="emailInput">이메일</label>
-            <div class="control">
-              <input
-                class="input"
-                id="emailInput"
-                type="email"
-                placeholder="abc@example.com"
-                autocomplete="on"
-              />
-            </div>
+        <div class="field">
+          <label class="label" for="nameInput">이름</label>
+          <div class="control">
+            <input
+              class="input"
+              id="nameInput"
+              type="text"
+              placeholder="홍길동"
+              required
+            />
           </div>
+        </div>
 
-          <div class="field">
-            <label class="label" for="phoneInput">전화번호</label>
-            <div class="control">
-              <input
-                class="input"
-                id="phoneInput"
-                type="tel"
-                placeholder="010-0000-0000"
-                autocomplete="on"
-              />
-            </div>
+        <div class="field">
+          <label class="label" for="streetAddressInput">주소</label>
+          <div class="control">
+            <input
+              class="input"
+              id="streetAddressInput"
+              type="text"
+              placeholder="서울특별시 강남구 테헤란로 123"
+              required
+            />
           </div>
+        </div>
 
-          <div class="field">
-            <label class="label" for="addressInput">주소</label>
-            <div class="control">
-              <input
-                class="input"
-                id="addressInput"
-                type="email"
-                placeholder="경기도 수원시 팔달구 우만동 513-17"
-                autocomplete="on"
-              />
-            </div>
+        <div class="field">
+          <label class="label" for="detailAddressInput">상세주소</label>
+          <div class="control">
+            <input
+              class="input"
+              id="detailAddressInput"
+              type="text"
+              placeholder="00아파트 101동 101호"
+              required
+            />
           </div>
+        </div>
 
-          <div class="field">
-            <label class="label" for="passwordInput">비밀번호</label>
-            <div class="control">
-              <input
-                class="input"
-                id="passwordInput"
-                type="password"
-                placeholder="********"
-                autocomplete="off"
-              />
-            </div>
+        <div class="field">
+          <label class="label" for="postalCodeInput">우편번호</label>
+          <div class="control">
+            <input
+              class="input"
+              id="postalCodeInput"
+              type="text"
+              placeholder="12345"
+              required
+            />
           </div>
+        </div>
 
-          <div class="field mb-5">
-            <label class="label" for="passwordConfirmInput"
-              >비밀번호 확인</label
-            >
-            <div class="control">
-              <input
-                class="input"
-                id="passwordConfirmInput"
-                type="password"
-                placeholder="********"
-                autocomplete="off"
-              />
-            </div>
+        <div class="field">
+          <label class="label" for="birthdateInput">생년월일</label>
+          <div class="control">
+            <input class="input" id="birthdateInput" type="date" required />
           </div>
+        </div>
 
-          <div class="welcomeBtn">
-            <button
-              class="welcomeBtns button is-primary is-fullwidth"
-              id="submitButton"
-            >
-              회원가입하기
-            </button>
+        <div class="field">
+          <label class="label" for="phoneNumberInput">전화번호</label>
+          <div class="control">
+            <input
+              class="input"
+              id="phoneNumberInput"
+              type="tel"
+              placeholder="010-0000-0000"
+              required
+            />
           </div>
-        </form>
-      </div>
-    </main>
+        </div>
+
+        <div class="welcomeBtn">
+          <button
+            class="welcomeBtns button is-primary is-fullwidth"
+            id="registerButton"
+          >
+            회원가입하기
+          </button>
+        </div>
+      </form>
 
     <footer></footer>
   </body>

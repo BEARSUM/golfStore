@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/css/manageProduct.css" rel="stylesheet" />
+
+    <script defer src="/assets/js/admin.js"></script>
+    <script defer src="/assets/js/products.js" type="module"></script>
+    <script src="https://kit.fontawesome.com/6d5788fdc0.js"></script>
+    <script defer type="module" src="/assets/js/headerUse.js"></script>
+    <link href="assets/css/headerFooter.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="home-container">
+      <!--공통된 component:my-category-->
+      <div class="admin-category">
+        <div class="admin-title">관리자<!--js--></div>
+
+        <div class="admin-category-list">
+          <!-- js로 추후 구현 -->
+          <a href="/manageOrder.html" id="orderLink">주문관리</a>
+          <a href="/manageMember.html" id="memberLink">회원관리</a>
+          <a href="/manageAdmin.html" id="adminLink">관리자관리</a>
+          <a href="/categoryList.html" id="categoryLink">카테고리 관리</a>
+          <a href="/productList.html" id="productLink">상품 관리</a>
+          <div class="horizontal-bar"></div>
+        </div>
+      </div>
+
+      <div class="home-admin-info">
+        <div class="product-category">
+          <div class="product-title">상품 관리</div>
+          <div>
+            <a href="productAdd.html" class="product-menu2">상품 등록</a>
+          </div>
+        </div>
+        <div class="product-section">
+          <table class="product-table">
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>카테고리</th>
+                <th>상품명</th>
+                <th>판매가격</th>
+                <th>재고</th>
+                <th>삭제</th>
+                <th>수정</th>
+              </tr>
+            </thead>
+            <tbody id="product-list"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
