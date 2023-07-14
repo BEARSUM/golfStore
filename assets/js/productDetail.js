@@ -44,9 +44,16 @@ async function getProduct() {
 
     //이미지 넣기
     const img1 = document.querySelector("#img1");
-    const img2 = document.querySelector("#img2");
     img1.src = `${URI}/${productImgs[0]}`;
-    img2.src = `${URI}/${productImgs[1]}`;
+    //즐겨찾기
+    const star = document.querySelector(".purchase-option i");
+    star.addEventListener("click", (e) => {
+      if (e.target.style.color === "var(--lightGray)") {
+        e.target.style.color = "var(--yellow)";
+      } else {
+        e.target.style.color = "var(--lightGray)";
+      }
+    });
 
     //장바구니에 상품 추가
     function addToCart() {

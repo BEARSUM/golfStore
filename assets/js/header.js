@@ -56,12 +56,12 @@ async function createHeader() {
   
               <li id="register">
                 <a href="/register.html">
-                  <i class="fa-solid fa-user-plus"></i>회원가입
+                  회원가입
                 </a>
               </li>
               <li id="cart" class = "hidden">
                 <a href="/cart.html" aria-current="page">
-                  <i class="fa-solid fa-bag-shopping"></i>
+                  <i class="fa-solid fa-bag-shopping fa-xl"></i>
                 </a>
               </li>
             </ul>

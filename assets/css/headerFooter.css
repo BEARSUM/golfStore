@@ -4,7 +4,7 @@
 .header nav {
   clear: both;
   margin-top: 30px;
-  min-height: 144px;
+  /* min-height: 144px; */
   top: 0px;
   background-color: rgb(255, 255, 255);
   padding: 0px 48px;
@@ -13,10 +13,10 @@
 }
 
 .main-category {
-  margin-top: 30px;
+  margin: 27px 0 26px 0;
   display: flex;
-  justify-content: space-around;
-  align-items: stretch;
+  /* justify-content: space-around; */
+  align-items: center;
 }
 
 .main-category .category-item .sub-categories {
@@ -32,9 +32,17 @@
   display: block;
 }
 
+.category-item:nth-child(1) {
+  padding: 10px 60px 10px 0;
+}
+.category-item:nth-child(3) {
+  margin-left: 20px;
+}
 .category-item {
   font-size: 24px;
+  font-weight: 400;
   position: relative;
+  padding: 10px 40px;
 }
 .category-item a {
   color: black;
@@ -45,13 +53,14 @@
 }
 
 .separator {
-  width: 2px;
-  background-color: gray;
-  margin-left: 0px;
+  width: 1px;
+  height: 17px;
+  background-color: var(--gray);
 }
 
 .headerMenu {
-  overflow: hidden;
+  /* 수민수정 */
+  /* overflow: hidden; */
 }
 
 .headerMenu li {
@@ -61,13 +70,20 @@
 
 .headerMenu li {
   margin-right: 3px;
+  /* 수민수정 */
+  font-size: 14px;
+  color: var(--black);
+  font-weight: 400;
+  align-items: center;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 15px;
+  /* padding: 0 15px; */
+  max-width: 100%;
+  margin: 0 0;
 }
 
 .search {
@@ -79,10 +95,17 @@
 .search input {
   border: none;
   outline: none;
+  border-bottom: 1px solid var(--black);
+  position: relative;
+  width: 48%;
+  line-height: 25px;
+  font-size: 15px;
 }
 
 .search i {
-  margin-left: 5px;
+  position: absolute;
+  left: 17%;
+  top: 36%;
 }
 a.beginner {
   /* Add your desired styles here */
@@ -96,7 +119,7 @@ a.beginner {
 
 .header .menuOnTopright .headerMenu a {
   color: black !important;
-  opacity: 60%;
+  /* opacity: 60%; */
   font-weight: 500;
   margin-left: 15px;
 }
@@ -140,8 +163,8 @@ a.beginner {
   position: relative;
   bottom: 0;
   width: 100%;
-  margin-top: 3rem;
-  margin-left: 5.5rem;
+  margin: 60px 48px;
+  /* margin-left: 5.5rem; */
   display: flex;
   flex-direction: column;
 }
@@ -149,47 +172,54 @@ a.beginner {
 /* 구분선 스타일 */
 .footer-separator {
   border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid var(--lightGray);
   margin-bottom: 10px;
 }
 
 .footerCompany {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-weight: bold;
 }
 
 .businessInfo {
   margin-bottom: 10px;
+  font-size: 13px;
 }
 
 .footerContents {
   margin-bottom: 10px;
+  font-size: 13px;
 }
 
 .footerContents a {
   margin-right: 10px;
   color: black;
   opacity: 0.5;
+  font-size: 13px;
 }
 
 .businessDetailOne {
   margin-bottom: 10px;
+  font-size: 13px;
 }
 
 .businessDetailOne span {
   margin-right: 5px;
+  font-size: 13px;
 }
 
 .businessDetailTwo {
   margin-bottom: 10px;
+  font-size: 13px;
 }
 
 .businessDetailTwo span {
   margin-right: 5px;
+  font-size: 13px;
 }
 
 .finalFooter {
-  margin-bottom: 3rem;
+  font-size: 13px;
 }
 
 a {

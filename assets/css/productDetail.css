@@ -18,6 +18,7 @@ body {
 .pd-detail {
   display: flex;
   flex-flow: row;
+  justify-content: center;
   gap: 10px;
 
   width: 65%;
@@ -155,6 +156,7 @@ body {
   width: 50px;
   cursor: pointer;
 }
+
 .option-cart {
   display: flex;
   justify-content: center;

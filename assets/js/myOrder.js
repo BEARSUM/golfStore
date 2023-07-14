@@ -45,16 +45,22 @@ async function getOrderData(userId) {
 
 function showMyOrder(myOrders) {
   myOrders.forEach((el) => {
-    console.log("내주문", myOrders);
-    const productId = el.productId;
-    const orderCount = el.orderCount;
+    console.log("내주문상품", el);
 
-    const price = el.price;
     //배열
-    let size = "";
-    el.size.forEach((el) => {
-      size += `, ${el}`;
-    });
+    const productId = el.products[0];
+    const orderCount = el.products[1];
+    const price = el.products[3];
+
+    // const size = el.products.size;
+    console.log("orderCount", orderCount);
+    //배열
+    // let size = "";
+    // el.size.forEach((el) => {
+    //   size += `, ${el}`;
+    // });
+
+    //배송상태
     let deliveryStatus = ""; //0:배송준비중 1:배송중 2:배송완료
     if (el.deliveryStatus === 0) deliveryStatus = "배송준비중";
     else if (el.deliveryStatus === 1) deliveryStatus = "배송중";
@@ -67,11 +73,11 @@ function showMyOrder(myOrders) {
     <div class="ordered-item-container">
     <div class="ordered-date">2023.07.01</div>
     <div class="ordered-item">
-    <img src="${size}" alt="" />
+    <img src="${price}" alt="" />
     <div class="item-info">
-    <div class="item-brand">${size}</div>
-    <div class="item-name">${size}</div>
-    <div class="item-option">옵션 : ${size}</div>
+    <div class="item-brand">${price}</div>
+    <div class="item-name">${price}</div>
+    <div class="item-option">옵션 : ${price}</div>
     <div class="item-price-quantity">
     <div class="item-price"><strong>${price}</strong>원</div>
     <div class="item-quantity">/${orderCount}개</div>

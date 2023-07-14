@@ -1,5 +1,34 @@
-//userId 불러오기-어떻게 하나요
-const userId = "어떻게 가져오나요..";
+//특정 회원 조회
+let userData = [];
+const URI = "http://kdt-sw-5-team06.elicecoding.com:3000";
+const token = localStorage.getItem("token");
+console.log("token", token);
+
+const userUrl = `${URI}/users/token`;
+async function getUser() {
+  // fetch 요청 옵션 설정
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      // 헤더에 토큰 추가
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  try {
+    const res = await fetch(`${userUrl}/${token}`, options);
+    if (!res.ok) return;
+    userData = await res.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
+let userId = "";
+getUser().then(() => {
+  userId = userData._id;
+  console.log(userId);
+});
+
 //탈퇴 버튼
 const leaveBtn = document.querySelector(".leave-button");
 
@@ -16,10 +45,9 @@ leaveBtn.addEventListener("click", () => {
 });
 
 //회원 탈퇴 api
-const URI = "http://kdt-sw-5-team06.elicecoding.com:3000";
-const userListUrl = `${URI}/users/${userId}`;
 
 async function leaveUser(userId) {
+  const userListUrl = `${URI}/users/${userId}`;
   try {
     const res = await fetch(`${userListUrl}`, { method: "DELETE" });
     if (!res.ok) {
