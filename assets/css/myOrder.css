@@ -149,13 +149,12 @@
 }
 .ordered-date {
   border-top: solid 1px var(--lightGray);
-  border-bottom: solid 1px var(--lightGray);
   font-size: 18px;
   font-weight: 400;
-  background-color: var(--whiteGray);
 
   padding: 12px;
 }
+
 .ordered-item {
   display: flex;
   flex-flow: row;
@@ -232,4 +231,26 @@
   color: white;
   background-color: var(--black);
   cursor: pointer;
+}
+
+/* .top-part {
+  display: flex;
+} */
+
+.top-part {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-set {
+  border-bottom: 1px solid black;
+}
+
+.total-amount {
+  text-align: right;
+  margin-left: 15px;
+  margin-block: 20px;
+  font-size: 15px;
+  font-weight: 400;
 }
