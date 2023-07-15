@@ -96,12 +96,19 @@ async function getProduct() {
       }
     });
 
-    // //구매하기
-    let buyButton = document.querySelector(".option-purchase");
+    const buyButton = document.querySelector(".option-purchase");
+
+    // 구매하기 버튼 클릭 시 처리
     buyButton.addEventListener("click", () => {
-      addToCart();
-      // 구매 페이지로 이동
-      window.location.href = "order.html";
+      const token = localStorage.getItem("token");
+      if (!token) {
+        alert("로그인이 필요합니다. 로그인 화면으로 이동합니다.");
+        location.href = "/login.html";
+      } else {
+        addToCart();
+        // 구매 페이지로 이동
+        window.location.href = "order.html";
+      }
     });
   } catch (error) {
     console.log(error);
