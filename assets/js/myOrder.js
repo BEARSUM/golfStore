@@ -1,3 +1,26 @@
+async function cancelOrder(orderId) {
+  const options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  try {
+    const res = await fetch(`${URI}/order/${orderId}`, options);
+    if (res.ok) {
+      alert("주문이 취소되었습니다.");
+      location.reload(); // 페이지 새로고침
+    } else {
+      throw new Error("주문 취소 중 오류가 발생했습니다.");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("주문 취소 중 오류가 발생했습니다.");
+  }
+}
+
 //특정 회원 조회
 let userData = [];
 let orderData = [];
@@ -25,12 +48,11 @@ async function getUser() {
 
 //회원의 주문정보 불러오기
 const orderUrl = `${URI}/order`;
+
 async function getOrderData(userId) {
   const res = await fetch(orderUrl);
   const jsonData = await res.json();
   const orderData = jsonData.orders; //전체 주문들
-
-  console.log("orderData", orderData);
 
   let myOrders = [];
   //order정보의 userId와 로그인된회원의 id의 일치확인
@@ -39,74 +61,82 @@ async function getOrderData(userId) {
       myOrders.push(order);
     }
   });
-  console.log("내주문들", myOrders);
   return myOrders;
 }
 
-function showMyOrder(myOrders) {
-  myOrders.forEach((el) => {
-    console.log("내주문상품", el);
+async function showMyOrder(myOrders) {
+  const orderedItemContainer = document.querySelector(".order-list-content");
+  myOrders.reverse();
 
-    //배열
-    const productId = el.products[0];
-    const orderCount = el.products[1];
-    const price = el.products[3];
+  for (const el of myOrders) {
+    const products = el.products;
+    const totalAmount = el.totalAmount;
+    let deliveryStatus = "";
 
-    // const size = el.products.size;
-    console.log("orderCount", orderCount);
-    //배열
-    // let size = "";
-    // el.size.forEach((el) => {
-    //   size += `, ${el}`;
-    // });
-
-    //배송상태
-    let deliveryStatus = ""; //0:배송준비중 1:배송중 2:배송완료
     if (el.deliveryStatus === 0) deliveryStatus = "배송준비중";
     else if (el.deliveryStatus === 1) deliveryStatus = "배송중";
     else if (el.deliveryStatus === 2) deliveryStatus = "배송완료";
-    console.log("배송상태", deliveryStatus);
 
-    const orderedItemContainer = document.querySelector(".order-list-content");
-    const orderedItemEl = document.createElement("div");
-    orderedItemEl.innerHTML = `
-    <div class="ordered-item-container">
-    <div class="ordered-date">2023.07.01</div>
-    <div class="ordered-item">
-    <img src="${price}" alt="" />
-    <div class="item-info">
-    <div class="item-brand">${price}</div>
-    <div class="item-name">${price}</div>
-    <div class="item-option">옵션 : ${price}</div>
-    <div class="item-price-quantity">
-    <div class="item-price"><strong>${price}</strong>원</div>
-    <div class="item-quantity">/${orderCount}개</div>
-    </div>
-    <div class="item-status-cancel">
-    <div class="order-status">${deliveryStatus}</div>
-    <button type="submit" class="order-cancel-button">
-    주문취소
-    </button>
-    </div>
-    </div>
-    </div>
-    </div>
-    `;
+    const orderSetEl = document.createElement("div"); // 주문 세트 컨테이너
+    orderSetEl.classList.add("order-set"); // 'order-set' 클래스를 컨테이너에 추가
 
-    orderedItemContainer.appendChild(orderedItemEl);
-  });
+    const orderEl = document.createElement("div"); // 주문 요소
+    orderEl.innerHTML = `<div class='top-part'><div class="ordered-date">2023.07.15</div><button class="order-cancel-button" type="submit">주문취소</button></div>`;
+
+    const cancelBtn = orderEl.querySelector(".order-cancel-button"); // 버튼 엘리먼트 가져오기
+
+    cancelBtn.addEventListener("click", async () => {
+      try {
+        const orderId = el._id; // 해당 주문의 orderId 얻어오기
+        await cancelOrder(orderId); // 주문 취소 요청 보내기
+        // 취소 성공 시 추가 작업 수행
+      } catch (error) {
+        console.error(error);
+        alert("주문 취소 중 오류가 발생했습니다.");
+        // 오류 처리 로직 추가
+      }
+    });
+
+    for (const product of products) {
+      const productId = product.productId;
+      const response = await fetch(`${URI}/products/${productId}`);
+      const productData = await response.json();
+
+      const productEl = document.createElement("div");
+      productEl.innerHTML = `
+        <div class="ordered-item-container">
+          <div class="ordered-item">
+            <img src="${URI}/${productData.product.images[0]}" alt=""/>
+            <div class="item-info">
+              <div class="item-brand">${productData.product.brand}</div>
+              <div class="item-name">${productData.product.name}</div>
+              <div class="item-option">사이즈 : ${product.size}</div>
+              <div class="item-price-quantity">
+                <div class="item-price"><strong>${productData.product.price}</strong>원</div>
+                <div class="item-quantity"> / ${product.orderCount}개</div>
+              </div>
+              <div class="item-status-cancel">
+                <div class="order-status">${deliveryStatus}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      orderEl.appendChild(productEl);
+    }
+
+    const totalAmountEl = document.createElement("div");
+    totalAmountEl.textContent = `총 결제금액 : ${totalAmount}원`;
+    totalAmountEl.classList.add("total-amount"); // Add the desired class name
+    orderEl.appendChild(totalAmountEl);
+
+    orderSetEl.appendChild(orderEl);
+    orderedItemContainer.appendChild(orderSetEl);
+  }
 }
 
 getUser()
   .then((user) => user._id) //getUser의 반환값 user로 회원_id를 찾는다.
   .then(getOrderData) //회원 _id를 getOrderData에서 사용할수있도록 넘겨준다.
   .then(showMyOrder);
-
-const productsUrl = `${URI}/products`;
-async function getproductInfo() {
-  const res = await fetch(`${productsUrl}`);
-  const jsonData = await res.json();
-  const productData = jsonData.products; //전체 상품들
-  console.log("productData", productData);
-  return productData;
-}
