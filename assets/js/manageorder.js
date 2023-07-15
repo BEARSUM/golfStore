@@ -27,6 +27,8 @@ async function updateOrderStatus(orderId, status) {
       body: JSON.stringify({ deliveryStatus: status }),
     });
     alert("배송 상태가 수정되었습니다.");
+    // 주문 목록 다시 불러오기
+    getorderlist();
   } catch (error) {
     alert("서버 오류: 배송 상태 수정에 실패했습니다.");
     console.error(error);
@@ -43,7 +45,6 @@ async function orderList(orders) {
 
     item.innerHTML = `<tr>
       <td>${_id}</td>
-      <td>${userId}</td>
       <td>${totalAmount}원</td>
       <td>
         <select id="order-status-${i}">
@@ -66,8 +67,23 @@ async function orderList(orders) {
 
     const selectOrderStatus = item.querySelector(`#order-status-${i}`);
     selectOrderStatus.addEventListener("change", function () {
-      const newStatus = selectOrderStatus.value;
-      console.log(newStatus, "new");
+      const newStatusText = selectOrderStatus.value; // 선택된 option의 value 값
+      let newStatus;
+
+      switch (newStatusText) {
+        case "pending":
+          newStatus = 0;
+          break;
+        case "shipping":
+          newStatus = 1;
+          break;
+        case "shipped":
+          newStatus = 2;
+          break;
+        default:
+          newStatus = 0; // 기본값 설정
+      }
+
       updateOrderStatus(orders[i]._id, newStatus);
     });
 
