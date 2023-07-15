@@ -22,17 +22,6 @@ const categoryListUrl = `${URI}/category`;
 
 async function forBeginner() {
   try {
-    // const categoryResponse = await fetch(`${categoryListUrl}/${categoryId}`);
-    // const categoryData = await categoryResponse.json();
-    // const categoryName = categoryData.category.categoryName;
-
-    // const parentCategoryId = categoryData.category.parentCategoryId;
-    // const parentCategoryResponse = await fetch(
-    //   `${categoryListUrl}/${parentCategoryId}`
-    // );
-    // const parentCategoryData = await parentCategoryResponse.json();
-    // const parentCategoryName = parentCategoryData.category.categoryName;
-
     const productsResponse = await fetch(`${URI}/products`);
     const productJsonData = await productsResponse.json();
     const productsData = productJsonData.products;
