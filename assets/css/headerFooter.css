@@ -15,7 +15,7 @@
 .main-category {
   margin: 27px 0 26px 0;
   display: flex;
-  /* justify-content: space-around; */
+  justify-content: space-around;
   align-items: center;
 }
 

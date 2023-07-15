@@ -21,6 +21,7 @@ async function updateHeaderMenu() {
   const edit = document.querySelector("#edit");
   const seeOrder = document.querySelector("#seeOrder");
   const register = document.querySelector("#register");
+  const search = document.querySelector(".search");
 
   const token = localStorage.getItem("token");
   const userData = await getUserData(token);
@@ -33,6 +34,7 @@ async function updateHeaderMenu() {
       seeOrder.classList.add("hidden");
       login.classList.add("hidden");
       register.classList.add("hidden");
+      search.classList.add("hidden");
     } else {
       logout.classList.remove("hidden");
       edit.classList.remove("hidden");
