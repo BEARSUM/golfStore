@@ -24,7 +24,7 @@ async function cancelOrder(orderId) {
 //특정 회원 조회
 let userData = [];
 let orderData = [];
-const URI = "http://kdt-sw-5-team06.elicecoding.com:3000";
+const URI = "http://localhost:8080";
 
 const token = localStorage.getItem("token");
 const productListUrl = `${URI}/products`;

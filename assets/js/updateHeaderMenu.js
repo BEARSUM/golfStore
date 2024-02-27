@@ -4,9 +4,7 @@ async function getUserData(token) {
   }
 
   try {
-    const response = await fetch(
-      `http://kdt-sw-5-team06.elicecoding.com:3000/users/token/${token}`
-    );
+    const response = await fetch(`http://localhost:8080/users/token/${token}`);
     return await response.json();
   } catch (err) {
     console.log(err);

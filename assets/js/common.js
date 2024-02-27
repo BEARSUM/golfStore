@@ -1,4 +1,4 @@
-export const API_URL = "http://kdt-sw-5-team06.elicecoding.com:3000";
+export const API_URL = "http://localhost:8080";
 
 export async function getAPI(url, params) {
   console.log(url, params);

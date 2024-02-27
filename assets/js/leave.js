@@ -1,6 +1,6 @@
 //특정 회원 조회
 let userData = [];
-const URI = "http://kdt-sw-5-team06.elicecoding.com:3000";
+const URI = "http://localhost:8080";
 const token = localStorage.getItem("token");
 console.log("token", token);
 

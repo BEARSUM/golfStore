@@ -20,8 +20,8 @@ td {
   padding: 10px;
 }
 
-@import "/assets/css/reset.css";
-@import "/assets/css/variables.css";
+@import "reset.css";
+@import "variables.css";
 * {
   box-sizing: border-box;
 }

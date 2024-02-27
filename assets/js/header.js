@@ -2,7 +2,7 @@
 const parentCategoryId = new URLSearchParams(window.location.search).get("c");
 
 async function getCategory() {
-  const URI = "http://kdt-sw-5-team06.elicecoding.com:3000";
+  const URI = "http://localhost:8080";
   const categoryListUrl = `${URI}/category`;
 
   try {
@@ -36,7 +36,7 @@ async function createHeader() {
           </div>
   
           <div class="mainLogo">
-            <img src="/assets/img/pageLogo2 (1).png" />
+            <img src="assets/img/pageLogo.png" />
           </div>
   
           <div class="menuOnTopright">

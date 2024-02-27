@@ -64,7 +64,7 @@ window.addEventListener("DOMContentLoaded", async (event) => {
 
     // 사용자 정보를 가져오기 위한 요청
     const userResponse = await fetch(
-      `http://kdt-sw-5-team06.elicecoding.com:3000/users/token/${token}`
+      `http://localhost:8080/users/token/${token}`
     );
     const userData = await userResponse.json();
 
@@ -93,21 +93,18 @@ window.addEventListener("DOMContentLoaded", async (event) => {
     // 주문 정보에 주소 정보 추가
 
     // 주문 정보를 서버로 전송
-    const response = await fetch(
-      "http://kdt-sw-5-team06.elicecoding.com:3000/order",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          userId: userId,
-          products: orderList,
-          totalAmount: orderList.reduce((acc, curr) => acc + curr.subtotal, 0),
-          address: shippingAddress,
-        }),
-      }
-    );
+    const response = await fetch("http://localhost:8080/order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userId: userId,
+        products: orderList,
+        totalAmount: orderList.reduce((acc, curr) => acc + curr.subtotal, 0),
+        address: shippingAddress,
+      }),
+    });
 
     // 서버 응답 확인
     if (response.ok) {
