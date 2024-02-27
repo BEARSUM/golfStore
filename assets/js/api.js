@@ -42,10 +42,9 @@ async function getAPI(url, params) {
 
 async function leaveUser() {
   try {
-    const data = await getAPI(
-      "http://kdt-sw-5-team06.elicecoding.com:3000/users/:userId",
-      { method: "DELETE" }
-    );
+    const data = await getAPI("http://localhost:8080/users/:userId", {
+      method: "DELETE",
+    });
     console.log(data);
   } catch {
     alert("에러가 발생했습니다.");

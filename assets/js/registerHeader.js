@@ -5,7 +5,7 @@ function createHeader() {
     <nav class="" role="navigation" aria-label="main navigation">
       <div class="container">
         <div class="mainLogo">
-          <img src="/assets/img/pageLogo2 (1).png" />
+          <img src="assets/img/pageLogo.png" />
         </div>
 
         <div class="menuOnTopright">

@@ -2,16 +2,13 @@ const registerButton = document.querySelector("#registerButton");
 
 // API 요청 함수
 async function fetchAPI(data) {
-  const response = await fetch(
-    "http://kdt-sw-5-team06.elicecoding.com:3000/users/sign-up",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }
-  );
+  const response = await fetch("http://localhost:8080/users/sign-up", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
   const responseData = await response.json();
 
   if (response.ok) {

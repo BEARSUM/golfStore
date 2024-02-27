@@ -1,4 +1,4 @@
-const URI = "http://kdt-sw-5-team06.elicecoding.com:3000";
+const URI = "http://localhost:8080";
 
 const categoryListUrl = `${URI}/category`;
 
