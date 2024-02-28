@@ -32,17 +32,15 @@
   display: block;
 }
 
-.category-item:nth-child(1) {
-  padding: 10px 60px 10px 0;
-}
-.category-item:nth-child(3) {
-  margin-left: 20px;
-}
 .category-item {
+  width: 100%;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 700;
   position: relative;
   padding: 10px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .category-item a {
   color: black;
