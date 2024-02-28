@@ -12,6 +12,7 @@ body {
 }
 .product-container {
   display: flex;
+  justify-content: center;
   flex-flow: row;
   padding: 0 48px;
 }
@@ -30,7 +31,7 @@ body {
 .products {
   display: flex;
   flex-flow: column;
-  width: 86%;
+  width: 100%;
 }
 .parent-category {
   font-size: 35px;
