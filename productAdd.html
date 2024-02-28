@@ -38,7 +38,7 @@
           </div>
         </div>
         <div class="product-section">
-          <form id="product-form">
+          <form id="product-form" enctype="multipart/form-data">
             <div class="field">
               <label class="label">상품 이름</label>
               <div class="control">
@@ -57,7 +57,6 @@
                 <div class="select is-fullwidth">
                   <select id="select-box" name="category">
                     <option disabled selected>카테고리를 선택해주세요.</option>
-                    <option value="men">MEN</option>
                   </select>
                 </div>
               </div>
@@ -81,10 +80,10 @@
               <div class="control">
                 <input
                   class="input"
-                  type="text"
-                  placeholder="이미지 URL를 입력하세요."
+                  type="file"
                   id="product-url"
                   name="images"
+                  multiple
                 />
               </div>
             </div>
@@ -119,7 +118,7 @@
               <div class="control">
                 <input
                   type="submit"
-                  value="수정하기"
+                  value="생성하기"
                   class="button is-link"
                   id="btn-submit"
                 />
