@@ -91,7 +91,7 @@ window.addEventListener("DOMContentLoaded", async (event) => {
       ".aside-order .button.is-success.is-fullwidth.is-hovered.myButton"
     )
     .addEventListener("click", () => {
-      if (!localStorage.getItem("token")) {
+      if (!localStorage.getItem("accessToken")) {
         location.href = "/login.html";
       } else location.href = "/order.html";
     });

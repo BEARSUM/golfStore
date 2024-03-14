@@ -26,7 +26,7 @@ let userData = [];
 let orderData = [];
 const URI = "http://localhost:8080";
 
-const token = localStorage.getItem("token");
+const token = localStorage.getItem("accessToken");
 const productListUrl = `${URI}/products`;
 const userUrl = `${URI}/users/token`;
 
