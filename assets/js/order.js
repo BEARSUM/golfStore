@@ -60,7 +60,7 @@ window.addEventListener("DOMContentLoaded", async (event) => {
     }
 
     // 토큰 가져오기
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("accessToken");
 
     // 사용자 정보를 가져오기 위한 요청
     const userResponse = await fetch(

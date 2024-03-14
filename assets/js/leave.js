@@ -1,8 +1,8 @@
 //특정 회원 조회
 let userData = [];
 const URI = "http://localhost:8080";
-const token = localStorage.getItem("token");
-console.log("token", token);
+const token = localStorage.getItem("accessToken");
+// console.log("token", token);
 
 const userUrl = `${URI}/users/token`;
 async function getUser() {

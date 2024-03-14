@@ -48,7 +48,7 @@ newPwCheckInput.addEventListener("keyup", showPwCheck);
 //특정 회원 조회
 let userData = [];
 const URI = "http://localhost:8080";
-const token = localStorage.getItem("token");
+const token = localStorage.getItem("accessToken");
 
 const userUrl = `${URI}/users/token`;
 async function getUser() {

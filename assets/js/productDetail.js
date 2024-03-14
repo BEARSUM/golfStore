@@ -9,7 +9,7 @@ async function getProduct() {
     for (const value of params.values()) {
       productId = value;
     }
-    console.log(productId);
+    // console.log(productId);
 
     //선택한 상품정보 불러오기
     const productDetailUrl = `${URI}/products/${productId}`;
@@ -22,7 +22,7 @@ async function getProduct() {
     const productName = productDetail.name;
     const productSize = productDetail.size; //배열
     const productImgs = productDetail.images; //배열
-    console.log("이미지", productImgs);
+    // console.log("이미지", productImgs);
     const itemInfo = document.querySelector(".general-info");
 
     itemInfo.innerHTML = `
@@ -45,6 +45,9 @@ async function getProduct() {
     //이미지 넣기
     const img1 = document.querySelector("#img1");
     img1.src = `${URI}/${productImgs[0]}`;
+    const img2 = document.querySelector("#img2");
+    img2.src = `${URI}/${productImgs[1]}`;
+
     //즐겨찾기
     const star = document.querySelector(".purchase-option i");
     star.addEventListener("click", (e) => {
@@ -100,7 +103,7 @@ async function getProduct() {
 
     // 구매하기 버튼 클릭 시 처리
     buyButton.addEventListener("click", () => {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("accessToken");
       if (!token) {
         alert("로그인이 필요합니다. 로그인 화면으로 이동합니다.");
         location.href = "/login.html";

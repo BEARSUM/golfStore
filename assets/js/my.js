@@ -5,7 +5,7 @@ let changedValue = [];
 orderType.forEach((el) => {
   el.addEventListener("click", function (e) {
     changeTab(e);
-    console.log(e.target.className);
+    // console.log(e.target.className);
   });
 });
 
@@ -21,43 +21,40 @@ function changeTab(e) {
 }
 
 // 특정 회원 조회
-let userData = [];
-const URI = "http://localhost:8080";
-const token = localStorage.getItem("token");
-const userUrl = `${URI}/users/token`;
+const URL = "http://localhost:8080";
+const accessToken = localStorage.getItem("accessToken");
+if (!accessToken) {
+  window.location.href = "/login.html";
+}
 
-async function getUser() {
-  // fetch 요청 옵션 설정
-  const options = {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      // 헤더에 토큰 추가
-      Authorization: `Bearer ${token}`,
-    },
-  };
+async function getUserData(accessToken) {
+  if (!accessToken) {
+    return null;
+  }
 
   try {
-    const res = await fetch(`${userUrl}/${token}`, options);
-    if (!res.ok) return;
-    userData = await res.json();
-    console.log("userData", userData);
-  } catch (error) {
-    console.log(error);
+    const response = await axios.get(`${URL}/users/token/${accessToken}`);
+    return await response;
+  } catch (err) {
+    console.log(err);
+    return null;
   }
 }
 
-// 회원 이름, 이메일, ID
-let userId = "";
-getUser().then(() => {
-  const userName = document.querySelector(".member-name strong");
-  const userEmail = document.querySelector(".member-email");
+async function paintUserData() {
+  const userData = await getUserData(accessToken);
 
-  userName.innerText = userData.name;
-  userEmail.innerText = userData.email;
+  if (userData) {
+    // console.log("userData.data.", userData.data);
+    const userName = document.querySelector(".member-name strong");
+    const userEmail = document.querySelector(".member-email");
+    userName.innerText = userData.data.name;
+    userEmail.innerText = userData.data.email;
 
-  userId = userData._id;
-});
+    userId = userData._id;
+  }
+}
+paintUserData();
 
 // 회원의 주문정보 불러오기
 const orderUrl = `${URI}/order`;

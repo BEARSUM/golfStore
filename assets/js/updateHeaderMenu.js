@@ -1,14 +1,18 @@
 async function getUserData(token) {
-  if (!token) {
-    return null;
-  }
-
   try {
-    const response = await fetch(`http://localhost:8080/users/token/${token}`);
-    return await response.json();
+    const response = await axios.get(
+      `http://localhost:8080/users/token/${token}`
+    );
+    return response;
   } catch (err) {
-    console.log(err);
-    return null; // If there is an error, return null
+    if (window.location.pathname === "/my.html") {
+      window.location.href = "/login.html";
+    }
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+    localStorage.removeItem("Authorization");
+    alert("로그아웃 되었습니다.");
+    return null;
   }
 }
 
@@ -21,35 +25,39 @@ async function updateHeaderMenu() {
   const register = document.querySelector("#register");
   const search = document.querySelector(".search");
 
-  const token = localStorage.getItem("token");
-  const userData = await getUserData(token);
+  const accessToken = localStorage.getItem("accessToken");
 
-  if (userData) {
-    if (userData.isAdmin) {
-      logout.classList.remove("hidden");
-      adminPage.classList.remove("hidden");
+  if (accessToken && window.location.pathname !== "/login.html") {
+    const userData = await getUserData(accessToken);
+
+    // console.log("userData", userData);
+    if (userData) {
+      if (userData.isAdmin) {
+        logout.classList.remove("hidden");
+        adminPage.classList.remove("hidden");
+        edit.classList.add("hidden");
+        seeOrder.classList.add("hidden");
+        login.classList.add("hidden");
+        register.classList.add("hidden");
+        search.classList.add("hidden");
+      } else {
+        logout.classList.remove("hidden");
+        edit.classList.remove("hidden");
+        seeOrder.classList.add("hidden");
+        adminPage.classList.add("hidden");
+        login.classList.add("hidden");
+        register.classList.add("hidden");
+        cart.classList.remove("hidden");
+      }
+    } else {
+      logout.classList.add("hidden");
+      adminPage.classList.add("hidden");
       edit.classList.add("hidden");
       seeOrder.classList.add("hidden");
-      login.classList.add("hidden");
-      register.classList.add("hidden");
-      search.classList.add("hidden");
-    } else {
-      logout.classList.remove("hidden");
-      edit.classList.remove("hidden");
-      seeOrder.classList.add("hidden");
-      adminPage.classList.add("hidden");
-      login.classList.add("hidden");
-      register.classList.add("hidden");
+      login.classList.remove("hidden");
+      register.classList.remove("hidden");
       cart.classList.remove("hidden");
     }
-  } else {
-    logout.classList.add("hidden");
-    adminPage.classList.add("hidden");
-    edit.classList.add("hidden");
-    seeOrder.classList.add("hidden");
-    login.classList.remove("hidden");
-    register.classList.remove("hidden");
-    cart.classList.remove("hidden");
   }
 }
 

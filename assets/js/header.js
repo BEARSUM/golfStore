@@ -127,7 +127,8 @@ function handleLogout(e) {
   e.preventDefault();
 
   // 로컬 스토리지에서 토큰을 삭제합니다.
-  localStorage.removeItem("token");
+  localStorage.removeItem("accessToken");
+  localStorage.removeItem("refreshToken");
   localStorage.removeItem("Authorization");
 
   //alert("로그아웃에 성공하였습니다!");
