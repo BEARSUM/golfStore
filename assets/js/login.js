@@ -13,20 +13,20 @@ async function fetchAPI(data) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
     },
     body: JSON.stringify(data),
   });
 
   if (response.ok) {
     const responseData = await response.json();
-    const token = responseData.token;
+    const { accessToken, refreshToken } = responseData;
+    // console.log("login", accessToken, refreshToken);
+    // 토큰을 로컬 스토리지에 저장
+    localStorage.setItem("accessToken", accessToken);
+    localStorage.setItem("refreshToken", refreshToken);
+    localStorage.setItem("Authorization", `Bearer ${accessToken}`);
 
-    // 토큰 값을 로컬 스토리지에 저장
-    localStorage.setItem("token", token);
-    localStorage.setItem("Authorization", `Bearer ${token}`);
-
-    //alert("로그인에 성공하였습니다!");
     window.location.href = "/index.html";
   } else {
     const errorData = await response.json();
@@ -38,7 +38,8 @@ function handleLogout(e) {
   e.preventDefault();
 
   // 로컬 스토리지에서 토큰을 삭제합니다.
-  localStorage.removeItem("token");
+  localStorage.removeItem("accessToken");
+  localStorage.removeItem("refreshToken");
   localStorage.removeItem("Authorization");
   //alert("로그아웃에 성공하였습니다!");
   window.location.href = "/index.html"; // 로그아웃 후 이동할 로그인 페이지의 URL을 적어주세요.
